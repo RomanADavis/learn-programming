@@ -38,5 +38,5 @@ puts "That becomes #{what}. Can you do it by hand?"
 #-159_908, I think. :/
 #Success!
 
-#5 * 12 + 5 should be
+puts 5 * 12 + 5 #would be
 puts add(multiply(5, 12), 5)
