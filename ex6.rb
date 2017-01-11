@@ -1,5 +1,5 @@
 types_of_people = 10
-setup = 'There are #{types_of_people} types of people.'
+setup = "There are #{types_of_people} types of people."
 binary = "binary"
 do_not = "don't"
 punchline = "Those who understand #{binary} and those who #{do_not}." # 1 & 2
