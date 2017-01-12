@@ -36,7 +36,7 @@ puts "We can also do it this way:"
 puts "We'd have %s beans, %d jars and %d crates" % secret_formula(start_point)
 # Making non rhyming poems that don't suck is really hard. I prefer something
 # like:
-# The line between what's real and not
-# is only in our mind
-# what's in our mind is all we've got
-# so now you our bind
+# The only way to know what's real or not
+# is using our own mind
+# But if what's in our mind is all we've got
+# we're in quite a bind
