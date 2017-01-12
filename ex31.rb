@@ -1,6 +1,6 @@
 def input
   print "> "
-  $stdin.gets.chomp
+  $stdin.gets.chomp.downcase
 end
 
 def start
@@ -33,7 +33,18 @@ def bear(choice)
   case choice
   when "1" then puts "The bear eats you face off. Goot job!"
   when "2" then puts "The bear eats your legs off. Good job!"
-  else puts "Well, doing %s is probably better. Bear ran away." % choice
+  else
+    puts "Well, doing %s is probably better. Bear ran away." % choice
+    puts "Eat the bear cake?y/N"
+    cake(input)
+  end
+end
+
+def cake(choice)
+  case choice
+  when "y" then puts "You are decapitated by a bear trap. Why did you think a bear had a cake anyaway?"
+  when "n" then puts "You're on a diet. You win. But you're still hungry."
+  else puts "You starve in your indecisiveness."
   end
 end
 
