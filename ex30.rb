@@ -23,3 +23,9 @@ if people > trucks
 else
   puts "Fine, let's stay home then."
 end
+
+# Else executes a block and ends and an if or elsif block. It only runs if none
+#of the ifs or elsifs above it have executed.
+# Elsif takes an argument and a block and executes that block if the argument
+#does not resolve to false or nil. Only executes if none of the if or elsif
+#blocks above it have executed.
