@@ -5,7 +5,7 @@ change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
 # this first kind of for-loop goes through a list in a more traditional style
 # found in other languages
 
-for number in the_count
+the_count.each do |number|
   puts "The count is #{number}."
 end
 
@@ -26,8 +26,14 @@ elements = []
 (0..5).each do |i|
   puts "Adding #{i} to the list."
   # pushes the i to the end of the list.
-  elements.push(i)
+  elements << i
 end
 
 # Now we can print them out too.
 elements.each {|i| puts "Element was #{i}"}
+
+# There are two flavors of the range operator ".." inclusive, and "..." exclusive
+# they each create a range, which is exactly what it sounds like, an object that
+# hold a range from one letter or number to another. Ranges will not work with
+# floats, however. You can iterate on a range with #each like an array, but it
+# doesn't quite have all the powers of an array, unfortunately.
