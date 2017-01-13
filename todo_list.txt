@@ -1,0 +1,10 @@
+Finish learn ruby the hard way
+*Make simple games for the memorization chapters
+*Make awesome games for the project chapters
+* Get serious about reading code
+Finish Advent of Code
+Finish Hartl's Rails
+*Make a blog so more people see this stuff.
+Finish SCIP
+Finish Atom FAQs / Manual
+Get a job
