@@ -3,8 +3,14 @@ Finish learn ruby the hard way
 *Make awesome games for the project chapters
 * Get serious about reading code
 Finish Advent of Code
+Do robot toy
+Do project Euler
 Finish Hartl's Rails
 *Make a blog so more people see this stuff.
 Finish SCIP
 Finish Atom FAQs / Manual
+* Make Atom extension
+* Make checklist extension
+* Make make typing game extension
 Get a job
+* Learn Pry
