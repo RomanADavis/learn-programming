@@ -1,6 +1,3 @@
-
-
-
 def count_to(n, by = 1) # will run forever if by is set to 0 or less.
   numbers = []
   i = 0
