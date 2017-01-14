@@ -2,6 +2,8 @@ Finish learn ruby the hard way
 *Make simple games for the memorization chapters
 *Make awesome games for the project chapters
 * Get serious about reading code
+* Learn more about hashes. I never really mastered them and they seem really
+useful
 Finish Advent of Code
 Do robot toy
 Do project Euler
@@ -13,4 +15,6 @@ Finish Atom FAQs / Manual
 * Make checklist extension
 * Make make typing game extension
 Get a job
-* Learn Pry
+Learn Pry
+Make Chiptunes
+# Learn how to use at least one music tracker
