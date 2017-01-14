@@ -34,3 +34,7 @@ Learn calculus
 Learn machine learning and deep learning
 Become an automation engineer
 Build a compiler?
+Make a manufactoria clone
+Learn more computer science
+Learn more automata theory
+Learn more discrete math
