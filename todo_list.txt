@@ -1,9 +1,12 @@
+Marry Nerlene
+Make all my dreams come true
 Finish learn ruby the hard way
 *Make simple games for the memorization chapters
 *Make awesome games for the project chapters
 * Get serious about reading code
 * Learn more about hashes. I never really mastered them and they seem really
 useful
+* Fill out animal classes at some point
 Finish Advent of Code
 Do robot toy
 Do project Euler
@@ -17,4 +20,17 @@ Finish Atom FAQs / Manual
 Get a job
 Learn Pry
 Make Chiptunes
-# Learn how to use at least one music tracker
+Learn how to use at least one music tracker
+* make chiptunes
+Make my own game with my own art and chiptunes
+Finish that Chip8 Emulator at some point
+Make a gameboy emulator
+Finish TAOCP
+* Make a MIX emulator or MMIX emulator
+Learn Assembly
+Make a MIPS or x86 emulator?
+Lean about markdown files and write this TODO list as one.
+Learn calculus
+Learn machine learning and deep learning
+Become an automation engineer
+Build a compiler?
