@@ -5,7 +5,7 @@ puts "Wait there are not ten things in that list. Let's fix that."
 stuff = ten_things.split(' ')
 more_stuff = ["Day", "Night", "Song" "Frisbee", "Corn", "Banana", "Girl", "Boy"]
 
-#  using math to make sure there's ten imenso
+#  using math to make sure there's ten items
 
 while stuff.length != 10
   next_one = more_stuff.shift

@@ -1,4 +1,4 @@
-user_name = ARGV.first ? ", " + ARGV.first : ""
+user_name = ARGV.first ? ", #{ARGV.first}" : ""
 prompt = '$'
 
 puts "Hi#{user_name}."
