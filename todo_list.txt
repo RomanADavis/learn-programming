@@ -1,5 +1,16 @@
+###############################################################################
+#############     ! IMPORTANT  !      #########################################
+###############################################################################
+
 Marry Nerlene
 Make all my dreams come true
+Get a job
+Become an automation engineer
+
+###############################################################################
+############      THING I NEED TO LEARN     ###################################
+###############################################################################
+
 Finish learn ruby the hard way
 *Make simple games for the memorization chapters
 *Make awesome games for the project chapters
@@ -7,34 +18,59 @@ Finish learn ruby the hard way
 * Learn more about hashes. I never really mastered them and they seem really
 useful
 * Fill out animal classes at some point
-Finish Advent of Code
-Do robot toy
-Do project Euler
 Finish Hartl's Rails
-*Make a blog so more people see this stuff.
-Finish SCIP
 Finish Atom FAQs / Manual
-* Make Atom extension
-* Make checklist extension
-* Make make typing game extension
-Get a job
-Learn Pry
-Make Chiptunes
 Learn how to use at least one music tracker
-* make chiptunes
-Make my own game with my own art and chiptunes
-Finish that Chip8 Emulator at some point
-Make a gameboy emulator
 Finish TAOCP
-* Make a MIX emulator or MMIX emulator
+Learn Pry
+Finish SCIP
 Learn Assembly
-Make a MIPS or x86 emulator?
 Lean about markdown files and write this TODO list as one.
 Learn calculus
 Learn machine learning and deep learning
-Become an automation engineer
-Build a compiler?
-Make a manufactoria clone
 Learn more computer science
 Learn more automata theory
 Learn more discrete math
+
+###############################################################################
+#############       PROGRAMMING PROJECTS      #################################
+###############################################################################
+
+Finish Advent of Code
+Do robot toy
+Do project Euler
+*Make a blog so more people see this stuff.
+* Make Atom extension
+* Make checklist extension
+* Make make typing game extension
+Make Chiptunes
+Make my own game with my own art and chiptunes
+Finish that Chip8 Emulator at some point
+Make a gameboy emulator
+* Make a MIX emulator or MMIX emulator
+Make a MIPS or x86 emulator?
+Build a compiler?
+Make a manufactoria clone
+Make a terminal program that can order my atom instance to do stuff, so I can
+more out of the atom terminal
+Make a Binding of Isaac clone
+Make a Nexus-like
+Make a roguelike
+Make a GUI framework based on ruby and HTML / XML
+Make a text editor for that framework
+Make a browser for that framework
+
+###############################################################################
+############      HABITS      #################################################
+###############################################################################
+
+Make a habit of drawing every day
+Make a habit of making at least one commit a day
+Make as many of my projects web based so that they're easy to share
+Make bed every day
+
+###############################################################################
+###########     FINISHED      #################################################
+###############################################################################
+
+* Make skeleton file work for Exercise 46 # DONE

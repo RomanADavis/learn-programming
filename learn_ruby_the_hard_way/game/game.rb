@@ -1,4 +1,4 @@
-class Engine
+class Game
   def initialize()
     @character = Character.new
     @map = Map.new
