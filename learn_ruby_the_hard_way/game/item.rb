@@ -1,10 +1,10 @@
-class item
-  def initialize(name, description = "", takable = false)
+class Item
+  def initialize(name, description = "", takeable = false)
     @name = name
     @description = descripiton
   end
 
-  class nailed_down?
-    !@takable
+  def nailed_down?
+    !@takeable
   end
 end

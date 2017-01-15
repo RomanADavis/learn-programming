@@ -79,6 +79,7 @@ Make my own music tracker
 Make a program to procedurally generate music
 Make web project to host webcomic
 Make atom run in the browser by using google drive in lieu of the file system
+gaikotse gem?
 
 ###############################################################################
 ############      HABITS      #################################################

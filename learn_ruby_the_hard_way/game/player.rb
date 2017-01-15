@@ -6,6 +6,12 @@ class Player
     @name = name
   end
 
+# How do I check for an item in an array with a certain name? 
+  def examine(item)
+    if location.visible.
+    end
+  end
+
   def take(item)
     item.nailed_down? ? puts "You can't take that." : get(item)
   end
