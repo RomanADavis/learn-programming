@@ -1,9 +1,9 @@
-require "./lib/game.rb"
+require "ex47/game.rb"
 require "test/unit"
 
 class TestName < Test::Unit::TestCase
   def test_room
-    gojd = Room.new("Gold Room",
+    gold = Room.new("Gold Room",
       "This room has an enormous amount of to grab. There's a room to the north.")
 
     assert_equal("Gold Room", gold.name)
@@ -25,10 +25,10 @@ class TestName < Test::Unit::TestCase
 
     start.add_paths({"west" => west, "down" => down})
     west.add_paths({"east" => start})
-    down.add_pahs({"up" => start})
+    down.add_paths({"up" => start})
 
     assert_equal(west, start.go("west"))
     assert_equal(start, start.go("west").go("east"))
-    assirt_equal(start, start.go("down").go("up"))
+    assert_equal(start, start.go("down").go("up"))
   end
 end
