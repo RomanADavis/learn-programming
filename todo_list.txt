@@ -8,7 +8,7 @@ Get a job
 Become an automation engineer
 
 ###############################################################################
-############      THING I NEED TO LEARN     ###################################
+############      THING I NEED TO LEARN      ##################################
 ###############################################################################
 
 Finish learn ruby the hard way
@@ -20,6 +20,9 @@ useful
 * Fill out animal classes at some point
 Finish Hartl's Rails
 Finish Atom FAQs / Manual
+* Learn Coffeescript
+* Learn LESS
+* Get better at javascript
 Learn how to use at least one music tracker
 Finish TAOCP
 Learn Pry
@@ -32,9 +35,23 @@ Learn more computer science
 Learn more automata theory
 Learn more discrete math
 Learn music theory
+Learn automation engineering
+Learn robotics
 
 ###############################################################################
-#############       PROGRAMMING PROJECTS      #################################
+#############     ART PROJECTS      ###########################################
+###############################################################################
+
+Make Tarot Paintings
+* Especiall that idea for The World
+Make Chiptunes
+Make my own game with my own art and chiptunes
+Finish a NaNoWriMo
+Make a webcomic
+Write a book on Atom packages
+
+###############################################################################
+#############      PROGRAMMING PROJECTS      ##################################
 ###############################################################################
 
 Finish Advent of Code
@@ -44,8 +61,6 @@ Do project Euler
 * Make Atom extension
 * Make checklist extension
 * Make make typing game extension
-Make Chiptunes
-Make my own game with my own art and chiptunes
 Finish that Chip8 Emulator at some point
 Make a gameboy emulator
 * Make a MIX emulator or MMIX emulator
@@ -62,6 +77,8 @@ Make a text editor for that framework
 Make a browser for that framework
 Make my own music tracker
 Make a program to procedurally generate music
+Make web project to host webcomic
+Make atom run in the browser by using google drive in lieu of the file system
 
 ###############################################################################
 ############      HABITS      #################################################
@@ -72,6 +89,8 @@ Make a habit of making at least one commit a day
 Make as many of my projects web based so that they're easy to share
 Make bed every day
 Pray every day
+Meditate every day
+
 ###############################################################################
 ###########     FINISHED      #################################################
 ###############################################################################

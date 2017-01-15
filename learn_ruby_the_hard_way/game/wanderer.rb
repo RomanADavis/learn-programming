@@ -1,4 +1,4 @@
-require "./game"
-require "./scene"
-require "./map"
-require "./character"
+require "game"
+require "room"
+require "map"
+require "character"
