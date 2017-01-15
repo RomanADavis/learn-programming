@@ -31,6 +31,7 @@ Learn machine learning and deep learning
 Learn more computer science
 Learn more automata theory
 Learn more discrete math
+Learn music theory
 
 ###############################################################################
 #############       PROGRAMMING PROJECTS      #################################
@@ -59,6 +60,8 @@ Make a roguelike
 Make a GUI framework based on ruby and HTML / XML
 Make a text editor for that framework
 Make a browser for that framework
+Make my own music tracker
+Make a program to procedurally generate music
 
 ###############################################################################
 ############      HABITS      #################################################
