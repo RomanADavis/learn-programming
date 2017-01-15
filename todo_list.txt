@@ -1,3 +1,6 @@
+I’ve reserved this space as a safety zone for pouring my empty and vain wishes.
+— kingjamesprogramming.tumblr.com
+
 ###############################################################################
 #############     ! IMPORTANT  !      #########################################
 ###############################################################################
@@ -12,8 +15,8 @@ Become an automation engineer
 ###############################################################################
 
 Finish learn ruby the hard way
-*Make simple games for the memorization chapters
-*Make awesome games for the project chapters
+* Make simple games for the memorization chapters
+* Make awesome games for the project chapters
 * Get serious about reading code
 * Learn more about hashes. I never really mastered them and they seem really
 useful
@@ -91,6 +94,9 @@ Make as many of my projects web based so that they're easy to share
 Make bed every day
 Pray every day
 Meditate every day
+Message throat for better voice
+Sing?
+Make exercise program
 
 ###############################################################################
 ###########     FINISHED      #################################################
