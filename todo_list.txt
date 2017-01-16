@@ -9,6 +9,11 @@ Marry Nerlene
 Make all my dreams come true
 Get a job
 Become an automation engineer
+Become the best looking man on earth
+Become the richest man on earth
+Get an awesome harem
+Explore the galaxy
+Become omnipotent
 
 ###############################################################################
 ############      THING I NEED TO LEARN      ##################################
@@ -21,7 +26,9 @@ Finish learn ruby the hard way
 * Learn more about hashes. I never really mastered them and they seem really
 useful
 * Fill out animal classes at some point
+* Learn more Sinatra
 Finish Hartl's Rails
+* Learn more canvas for web
 Finish Atom FAQs / Manual
 * Learn Coffeescript
 * Learn LESS
@@ -98,6 +105,7 @@ Message throat for better voice
 Sing?
 Make exercise program
 Read Blake
+Grow flowers
 
 ###############################################################################
 ###########     FINISHED      #################################################

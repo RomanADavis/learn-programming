@@ -1,7 +1,7 @@
 class Parser
-  attr_reader :
-  def initialize(string)
-    @word_list = string.split(" ")
+  attr_reader :word_list
+  def initialize(sentence)
+    @word_list = Lexicon.scan(sentence)
   end
 
 
@@ -18,7 +18,7 @@ class Parser
   end
 
   def skip(word_type)
-     match(@word_list, word_type) while peek(@word_list) = word_type
+     match(@word_list, word_type) while peek(@word_list) == word_type
   end
 
   def next_word

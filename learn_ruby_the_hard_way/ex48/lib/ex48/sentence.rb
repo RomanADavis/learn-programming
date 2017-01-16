@@ -1,5 +1,5 @@
 class Sentence
-  attr_reader :subject :verb :object
+  attr_reader :subject, :verb, :object
   def initialize(subject, verb, object)
     @subject = subject[1]
     @verb = verb[1]
