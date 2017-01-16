@@ -40,7 +40,7 @@ class Parser
     raise ParseError.new("Expected a noun or direction next")
   end
 
-  def parse_subject
+    def parse_subject
     word = next_word
 
     return match(word, "noun") if word == "noun"

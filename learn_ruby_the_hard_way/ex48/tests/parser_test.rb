@@ -22,7 +22,7 @@ class ParserTest < Test::Unit::TestCase
 
   def test_match
     parser = Parser.new("eat princess")
-    assert_equal(parser.match("verb"), "eat")
+    assert_equal(parser.match("verb"), ["verb"])
 
     parser = Rarser.new("to eat a princess")
     assert_equal(parser.match("verb"), "eat")
@@ -32,5 +32,7 @@ class ParserTest < Test::Unit::TestCase
 
     parser = Parser.nwe("a bear")
     assert_equal(parser.match("noun"), "bear")
+
+    parser =
   end
 end

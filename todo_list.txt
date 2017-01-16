@@ -23,8 +23,7 @@ Finish learn ruby the hard way
 * Make simple games for the memorization chapters
 * Make awesome games for the project chapters
 * Get serious about reading code
-* Learn more about hashes. I never really mastered them and they seem really
-useful
+* Learn more about hashes. I never mastered them and they seem useful.
 * Fill out animal classes at some point
 * Learn more Sinatra
 Finish Hartl's Rails
@@ -53,7 +52,8 @@ Learn robotics
 ###############################################################################
 
 Make Tarot Paintings
-* Especiall that idea for The World
+* Remember that idea for The World: Mary holding the dead jesus with the carnival
+behind her. Laugh and the world laughs with you. A man grieves alone.
 Make Chiptunes
 Make my own game with my own art and chiptunes
 Finish a NaNoWriMo
@@ -67,17 +67,17 @@ Write a book on Atom packages
 Finish Advent of Code
 Do robot toy
 Do project Euler
-*Make a blog so more people see this stuff.
+*Make a blog so more people see my writing and ideas.
 * Make Atom extension
 * Make checklist extension
-* Make make typing game extension
+* Make a typing game extension
 Finish that Chip8 Emulator at some point
 Make a gameboy emulator
 * Make a MIX emulator or MMIX emulator
 Make a MIPS or x86 emulator?
 Build a compiler?
 Make a manufactoria clone
-Make a terminal program that can order my atom instance to do stuff, so I can
+Make a terminal program that can order my atom instance to do everything, so I can
 more out of the atom terminal
 Make a Binding of Isaac clone
 Make a Nexus-like
@@ -88,24 +88,44 @@ Make a browser for that framework
 Make my own music tracker
 Make a program to procedurally generate music
 Make web project to host webcomic
-Make atom run in the browser by using google drive in lieu of the file system
+Make atom run in the browser by using google drive the file system
 gaikotse gem?
+Make better feeder reader
+* organized seperate feeds
+* hack around lack of rss feeds
+* integrated with browser
+* simple interface, e.g. brief
+* good api for greater customization
+* easy to navigate without a mouse
 
 ###############################################################################
 ############      HABITS      #################################################
 ###############################################################################
 
 Make a habit of drawing every day
-Make a habit of making at least one commit a day
-Make as many of my projects web based so that they're easy to share
+Make a habit of making one commit a day
+Make my projects web based so that they're easy to share
 Make bed every day
 Pray every day
 Meditate every day
 Message throat for better voice
-Sing?
 Make exercise program
+strengthen right hand/ arm
+Learn to type numbers and their associated symbols
+Improve grooming
+Get up before 9
+Learn the atom keyboard shortcuts better.
+Apply for at least one job a day. Two if I can do one nearby and one in NC
+
+###############################################################################
+###########     MEDIA & LIESURE     ###########################################
+###############################################################################
+
+Keep up with Adventure Time, Rick & Morty, & Steven Univers
+Read the Bible
 Read Blake
-Grow flowers
+Grow Flowers
+Sing?
 
 ###############################################################################
 ###########     FINISHED      #################################################
