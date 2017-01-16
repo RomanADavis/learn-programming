@@ -1,46 +1,58 @@
-class ParserError < Exception
-end
-
 class Parser
-  def peek(word_list)
-    word_list ? word_list[0] : nil
+  attr_reader :
+  def initialize(string)
+    @word_list = string.split(" ")
   end
 
-  def match(word_list, expecting)
-    if word_list
-      word = word_list.shift
+
+  def peek
+    @word_list ? @word_list[0] : nil
+  end
+
+  def match(expecting)
+    if @word_list
+      word = @word_list.shift
       return word[0] == expecting ? word : nil
     end
     nil
   end
 
-  def skip(word_list, word_type)
-     match(word_list, word_type) while peek(word_list) = word_type
+  def skip(word_type)
+     match(@word_list, word_type) while peek(@word_list) = word_type
   end
 
-  def parse_verb(word_list)
-    skip(word_list, "stop")
+  def next_word
+    skip(@word_list, "stop")
+    peek(@word_list)
+  end
 
-    return match(word_list, "verb") if peek(word_list) == "verb"
+  def parse_verb
+    return match(@word_list, "verb") if next_word(@word_list) == "verb"
 
     raise ParseError.new("Expected a verb next.")
   end
 
-  def parse_object(word_list)
-    skip(word_list, "stop")
-    next_word = peek(word_list)
+  def parse_object
+    word = next_word
 
-    return match(word_list, "noun") if next_word == "noun"
-    return match(word_list, "direction") if next_word == "direction"
+    return match(@word_list, "noun") if word == "noun"
+    return match(@word_list, "direction") if word == "direction"
     raise ParseError.new("Expected a noun or direction next")
   end
-end
 
-class Sentence
-  attr_reader :subject :verb :object
-  def initialize(subject, verb, object)
-    @subject = subject[1]
-    @verb = verb[1]
-    @ibject = object[1]
+  def parse_subject
+    word = next_word
+
+    return match(word, "noun") if word == "noun"
+    return ["noun", "player"] if word == "verb"
+    raise ParseError.new("Expected a verb or noun")
+  end
+
+  def parse_sentence
+    subject = parse_subject
+    verb = parse_verb
+    object = parse_object
+
+    Sentence.new(subject, verb, object)
   end
 end
