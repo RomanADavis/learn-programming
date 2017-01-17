@@ -46,6 +46,7 @@ Learn more discrete math
 Learn music theory
 Learn automation engineering
 Learn robotics
+Learn electron
 
 ###############################################################################
 #############     ART PROJECTS      ###########################################
