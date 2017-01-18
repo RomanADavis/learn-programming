@@ -74,29 +74,49 @@ module Map
   the void of space, then implodes as the hull ruptures, crushing you body into
   jam jelly.
   """)
+
+  ESCAPE_POD.add_paths({
+    "2" => THE_END_WINNER,
+    "*" => THE_END_LOSer
+  })
+
+  GENERIC_DEATH = Room.new("Death", "You died.")
+
+  THE_BRIDGE.add_paths({
+    "throw the bomb" => GENERIC_DEATH
+    "slowly place the bomb" => ESCAPE_POD
+  })
+
+  LASER_WEAPON_ARMORY.add_paths({
+    "0132" => THE BRIDGE,
+    "*" => GENERIC_DEATH
+  })
+
+  CENTRAL_CORRIDOR.add_paths({
+    "shoot!" => GENERIC_DEATH,
+    "dodge" => GENERIC_DEATH,
+    "tell a joke" => LASER_WEAPON_ARMORY
+  })
+
+  START = CENTRAL_CORRIDOR
+
+  ROOM_NAMES = {
+    "CENTRAL_CORRIDOR" => CENTRAL_CORRIDOR,
+    "LASER_WEAPON_ARMORY" => LASER_WEAPON_ARMORY,
+    "THE_BRIDGE" => THE_BRIGDE,
+    "ESCAPE_POD" =>  ESCAPE_POD,
+    "THE_END_WINNER" => THE_END_WINNER,
+    "THE_END_LOSER" => THE_END_LOSER,
+    "START" => START
+  }
+
+  def Map::Load_room(session)
+    # Given a session, this will return the right room or nil
+    ROOM_NAMES[session[:room]]
+  end
+
+  def Map::Save_room(session, room)
+    # Store the room in the session for later, using it's name
+    session[:room] = ROOM_NAMES.key(room)
+  end
 end
-
-FSCAPE_POD.add_paths({
-  "2" => THE_END_WINNER,
-  "*" => THE_END_LOSer
-  })
-
-GENERIC_DEATH = Room.new("Death", "You died.")
-
-THE_BRIDGE.add_paths({
-  "throw the bomb" => GENERIC_DEATH
-  "slowly place the bomb" => ESCAPE_POD
-  })
-
-LASER_WEAPON_ARMORY.add_paths({
-  "0132" => THE BRIDGE,
-  "*" => GENERIC_DEATH
-  })
-
-CENTRAL_CORRIDOR.add_paths({
-  "shoot!" => GENERIC_DEATH,
-  "dodge" => GENERIC_DEATH,
-  "tell a joke" => LASER_WEAPON_ARMORY
-  })
-
-START = CENTRAL_CORRIDOR
