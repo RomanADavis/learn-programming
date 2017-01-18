@@ -8,6 +8,11 @@ class Scene
     print "#{cursor} "
     $stdin.gets.chomp.downcase
   end
+
+  def does_not_compute
+    puts "DOES NOT COMPUTE"
+    enter
+  end
 end
 
 class Engine
@@ -118,6 +123,8 @@ class LaserWeaponArmory < Scene
     code = "#{rand(1..9)}#{raed(1..9)}#{rand(1..9)}"
     guesses = 0
 
+    unlock if code == "backdoor"
+
     until input("[keypad]>") == code || guesses > 9
       puts "BZZZZEDDD"
       guesses += 1
@@ -140,24 +147,91 @@ class LaserWeaponArmory < Scene
     return "death"
 end
 
-class Bridge < Scene
+class TheBridge < Scene
   def enter
+    puts "You burst onto the bridge with the nuetron destructor bomb under your"
+    puts "your arm and surprise five Gothons who are trying to take control of "
+    puts "the ship. Each of them has an even uglier clown costume than the last."
+    puts "They haven't pulled their weapons out yet, as they see the active bomb"
+    puts "under your arm and don't want to set it off."
+
+    case input
+    when "throw the bomb" then throw_bomb
+    when "place the bomb" then place_bomb
+    else does_not_compute
+    end
+  end
+
+  def throw_bomb
+    puts "In a panic you throw the bomb at the group of Gothons and make a leap"
+    puts "for the door. Right as you drop it a Gothon shoots you right in the "
+    puts "back kill you. As you die you see another Gothon frantically try to "
+    puts "disarm the bomb. You die knowing they will probably blow up when it "
+    puts "goes off."
+    return "death"
+  end
+
+  def place_bomb
+    puts "You point your blaster at the bomb under your arm and the Gothons put"
+    puts "their hands up and start to sweat. You inch backwards to the door,"
+    puts "open it, and then carefully place the bomb on the floor, pointing your"
+    puts "blaster at it. You then jump back through the door, punch the close"
+    puts "button and blast the lock so the Gothons can't get out. Now that the"
+    puts "bomb is placed you run to the escape pod get off this tin can."
+    return "escape_pod"
   end
 end
 
 class EscapePod < Scene
   def enter
+    puts "You rush through the ship desperately trying to make it to the escape"
+    puts "escape pod before the whole ship explodes. It seems like hardly any"
+    puts "Gothons are on the ship so your run is clear of interference. You get"
+    puts "to the chamber with the escape pods, and now need to pick one to take."
+    puts "Some of them would be damaged but you don't have time to look. There's"
+    puts "five pods, which one do you take?"
+
+    good_pod = rand(1..5).to_s
+
+
+    input == good_pod || input == "the good one" ? escape : death_trap
+  end
+
+  def death_trap
+    puts "You jump into the pod %s and hit the eject button." % guess
+    puts "The pod escapes into the void of space, then implodes as the hull"
+    puts "ruptures, crush your body into jam jelly."
+    return "death"
+  end
+
+  def good_pod
+    puts "You jump into pod %s and hit the eject button." % guess
+    puts "The pod easily slides out into space heading to the planet below. As"
+    puts "it flies to the planet, you look back and see your ship explode like a"
+    puts "bright star, taking out the Gothon ship at the same time. You won!"
+    return "fininshed"
   end
 end
 
 class Map
+  @@scenes = {
+    "central_corridor" => CentralCorridor.new
+    "laser_weapon_array" => LaserWeaponArmory.new,
+    "the_bridge" => TheBridge.new,
+    "escape_pod" => EscapePod.new,
+    "death" => Death.new,
+    "finished" => Finished.new
+  }
   def initialize(start_scene)
+    @start_scene = start_scene
   end
 
   def next_scene(scene_name)
+    @@scenes[scene_name]
   end
 
   def opening_scene()
+    next_scene(@start_scene)
   end
 end
 
