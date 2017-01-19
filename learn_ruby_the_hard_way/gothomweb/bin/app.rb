@@ -1,5 +1,5 @@
 require "sinatra"
-
+require "./lib/gothonweb/map.rb"
 set :port, 8080
 set :static, true
 set :public_folder, "static"
