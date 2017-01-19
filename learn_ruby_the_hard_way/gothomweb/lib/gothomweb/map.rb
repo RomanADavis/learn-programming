@@ -1,4 +1,21 @@
 module Map
+  class Room
+    attr_reader :name, :description, :paths
+    def initialize(name, description)
+      @name = name
+      @description = description
+      @paths = {}
+    end
+
+    def go(direction)
+      @paths[direction]
+    end
+
+    def add_paths(paths)
+      @paths.update(paths)
+    end
+  end
+
   CENTRAL_CORRIDOR = Room.new("Central Corridor",
   """
   The Gothons of Planet Percal #25 have invaded your ship and destroyed your
