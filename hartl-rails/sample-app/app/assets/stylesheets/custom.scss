@@ -106,7 +106,6 @@ footer {
 /* sidebar */
 
 aside {
-   float: left;
   section.user_info {
     margin-top: 20px;
   }
@@ -139,4 +138,17 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
 }
