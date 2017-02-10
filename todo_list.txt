@@ -47,6 +47,8 @@ Learn music theory
 Learn automation engineering
 Learn robotics
 Learn electron
+Learn physics
+Learn OAuth
 
 ###############################################################################
 #############     ART PROJECTS      ###########################################
@@ -90,7 +92,7 @@ Make my own music tracker
 Make a program to procedurally generate music
 Make web project to host webcomic
 Make atom run in the browser by using google drive the file system
-gaikotse gem?
+Gaikotsu gem?
 Make better feeder reader
 * organized seperate feeds
 * hack around lack of rss feeds
@@ -98,6 +100,15 @@ Make better feeder reader
 * simple interface, e.g. brief
 * good api for greater customization
 * easy to navigate without a mouse
+Make a Reddit based RPG.
+* All the NPCs would be bots, including monsters.
+* They're might be grindiness, but  encourage players to make their own bots to
+grind, making it an idle RPG.
+* Manage inventor and equipment through PMs?
+Make a webscraper to get Hartl's Rails and the Zed Shaw books and put them in
+this repo.
+* May have to make my own ruby wrapper for the API.
+* And learn OAuth
 
 ###############################################################################
 ############      HABITS      #################################################
@@ -116,17 +127,30 @@ Learn to type numbers and their associated symbols
 Improve grooming
 Get up before 9
 Learn the atom keyboard shortcuts better.
+* Tab will indent every line of selected text. Is there a reverse
+operation?
+* Shift + / will comment all selected text. Reverse operation?
 Apply for at least one job a day. Two if I can do one nearby and one in NC
 
 ###############################################################################
 ###########     MEDIA & LIESURE     ###########################################
 ###############################################################################
 
-Keep up with Adventure Time, Rick & Morty, & Steven Univers
+Keep up with Adventure Time, Rick & Morty, & Steven Universe
 Read the Bible
 Read Blake
 Grow Flowers
 Sing?
+Westworld
+
+###############################################################################
+##########      OBLIGATIONS     ###############################################
+###############################################################################
+
+Opera Painting
+Nanny Art
+Jesus Drawing?
+Jim's Project
 
 ###############################################################################
 ###########     FINISHED      #################################################
