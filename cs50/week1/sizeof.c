@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int main(void){
+    // Get the bitesize of datatypes
     printf("bool is size of %lu.\n", sizeof(bool));
     printf("int is size of %lu.\n", sizeof(int));
     printf("float is size of %lu.\n", sizeof(float));
