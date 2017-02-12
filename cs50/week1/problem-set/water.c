@@ -13,7 +13,7 @@ int main(void){
     printf("Bottles: %ld\n", bottles(minutes));
 }
 
-// Calculates the number of gallons per minute.
+// Calculates the water bottles used.
 long bottles(long minutes){
     int ounces_in_a_gallon = 128, ounces_in_a_bottle = 16;
     float gallons_per_minute = 1.5;
