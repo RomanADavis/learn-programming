@@ -3,6 +3,7 @@
 #include <string.h>
 
 bool is_alpha(string);
+char increment(char);
 
 int main(int argc, string argv[]){
     // Shuts down the program without a valid key.
@@ -11,8 +12,13 @@ int main(int argc, string argv[]){
         return 1;
     }
     
-    printf("Success.\n");
+    //string key = argv[1];
+    
+    string secret = get_string();
+    
+    printf("%c\n", increment(secret[0]));
 }
+
 
 // Checks for key made of alphabetical characters
 bool is_alpha(string key){
@@ -23,4 +29,16 @@ bool is_alpha(string key){
     }
     
     return true;
+}
+
+char increment(char letter){
+    if(letter >= 'a' && letter <= 'z'){
+        return letter == 'z' ? 'a' : letter + 1;
+    }
+    
+    if(letter >= 'A' && letter <= 'Z'){
+        return letter == 'Z' ? 'A' : letter + 1;
+    }
+        
+    return letter;
 }
