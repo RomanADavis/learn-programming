@@ -7,10 +7,10 @@ int main(void){
     
     if(s != NULL){
         for(int i = 0, n = strlen(s); i < n; i++){
-            if(s[i] >= 'a' && s[i] <= 'z'){
-                printf("%c", s[i] - 32);
+            if(s[i] >= 'a' && s[i] <= 'z'){ // if it's a lowercase letter
+                printf("%c", s[i] - 32); // print the capitalized the letter
             }else{
-                printf("%c", s[i]);
+                printf("%c", s[i]); // otherwise, just print the letter.
             }
         }
     }
