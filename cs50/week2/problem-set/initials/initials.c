@@ -7,11 +7,15 @@ int main(void){
     string full_name = get_string();
     
     if(full_name != NULL){
-        printf("%c", toupper(full_name[0]));
+
+        if(full_name[0] != ' '){
+            printf("%c", toupper(full_name[0]));  
+        }
         
-        for(int i = 0, length = strlen(full_name); i < length; i++){
-            if(full_name[i] == ' '){
-                printf("%c", toupper(full_name[i + 1]));
+        for(int i = 1 /* skips first letter */, length = strlen(full_name); i < length; i++){
+            
+            if(full_name[i - 1] == ' ' && full_name[i] != ' '){
+                printf("%c", toupper(full_name[i]));
             }
         }
         
