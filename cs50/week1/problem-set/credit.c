@@ -73,7 +73,7 @@ int first_digit(long long number){
     return isolate_digit(number, digit_count(number) - 1);
 }
 
-// Prints out the card type.
+// Prints out the card typ.
 void find_card(long long number){
     int first = first_digit(number);
     int length = digit_count(number);
