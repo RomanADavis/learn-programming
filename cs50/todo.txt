@@ -1,1 +1,2 @@
 week1/credit.c works, but the code is messy and barely readable. Would like to refactor in the future.
+week2/lecture_examples should have more comments
