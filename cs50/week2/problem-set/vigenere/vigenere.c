@@ -15,8 +15,12 @@ int main(int argc, string argv[]){
     }
     
     string key = argv[1];
+    
+    printf("plaintext: ");
+    
     string secret = get_string();
     
+    printf("ciphertext: ");
     encrypt(secret, key);
 }
 
