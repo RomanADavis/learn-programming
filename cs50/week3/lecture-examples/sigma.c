@@ -2,6 +2,8 @@
 #include <cs50.h>
 
 int sigma(int m);
+int iter_sigma(int m);
+int smart_sigma(int m);
 
 int main(void){
     int n;
@@ -11,9 +13,7 @@ int main(void){
         n = get_int(); 
     }while(n < 0);
     
-    int answer = sigma(n);
-    
-    printf("%d\n", answer);
+    printf("Recursive:\t%d \nIterative:\t%d \nSmart:\t\t%d\n", sigma(n), iter_sigma(n), smart_sigma(n));
 }
 
 int sigma(int m){ // Recursive algo for triangle numbers
@@ -22,4 +22,18 @@ int sigma(int m){ // Recursive algo for triangle numbers
     }
     
     return m + sigma(m - 1);
+}
+
+int iter_sigma(int m){ // Iterative algo for triangle numbers
+    int total = 0;
+    
+    for(int i = 0; i <= m; i++){
+        total += i;
+    }
+    
+    return total;
+}
+
+int smart_sigma(int m){ // Smart algo that solves in constant time!
+    return m * (m + 1) / 2;
 }
