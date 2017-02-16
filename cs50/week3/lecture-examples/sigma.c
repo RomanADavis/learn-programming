@@ -25,9 +25,7 @@ int sigma(int m){ // Recursive algo for triangle numbers
 }
 
 int iter_sigma(int m){ // Iterative algo for triangle numbers
-    int total = 0;
-    
-    for(int i = 0; i <= m; i++){
+    for(int i = 0, total = 0; i <= m; i++){
         total += i;
     }
     
