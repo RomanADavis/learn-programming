@@ -21,27 +21,28 @@
 
 int main(int argc, string argv[])
 {
-    // TODO: comment me
+    // Makes sure the user uses the program correctly.
     if (argc != 2 && argc != 3)
     {
         printf("Usage: ./generate n [s]\n");
         return 1;
     }
 
-    // TODO: comment me
+    // Converts the string argument to an integer.
     int n = atoi(argv[1]);
 
-    // TODO: comment me
+    // Uses the next argument as a seed if present
     if (argc == 3)
     {
         srand48((long) atoi(argv[2]));
     }
-    else
+    // Uses the current time as a seed if it's not present.
+    else 
     {
         srand48((long) time(NULL));
     }
 
-    // TODO: comment me
+    // Prints n randomly generated numbers.
     for (int i = 0; i < n; i++)
     {
         printf("%i\n", (int) (drand48() * LIMIT));
