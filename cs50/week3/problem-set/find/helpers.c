@@ -14,6 +14,11 @@
 bool search(int value, int values[], int n)
 {
     // TODO: implement a searching algorithm
+    for(int i = 0; int i < n; i++){ // Linear search
+        if(values[i] == value){
+            return true;
+        }
+    }
     return false;
 }
 
@@ -22,6 +27,20 @@ bool search(int value, int values[], int n)
  */
 void sort(int values[], int n)
 {
-    // TODO: implement an O(n^2) sorting algorithm
+    bool unsorted = true;
+    int holder;
+    
+    // Bubblesort
+    while(unsorted){
+        unsorted = false;
+        for(int i = 0; i < n - 1; i ++){
+            if(values[i] > values[i + 1]){ 
+                unsorted = true; // Start the loop over.
+                holder = values[i]; // Switches places
+                values[i] = values[i + 1];
+                values[i + 1]
+            }
+        }
+    }
     return;
 }
