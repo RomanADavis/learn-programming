@@ -13,11 +13,16 @@
  */
 bool search(int value, int values[], int n)
 {
+    if(value < 0){ // Return false if nonpositive
+        return false;
+    }
+    
     for(int i = 0; i < n; i++){ // Linear search
         if(values[i] == value){
             return true;
         }
     }
+    
     return false;
 }
 
