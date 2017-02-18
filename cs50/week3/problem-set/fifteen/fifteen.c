@@ -154,8 +154,20 @@ void greet(void)
  * Initializes the game's board with tiles numbered 1 through d*d - 1
  * (i.e., fills 2D array with values but does not actually print them).  
  */
-void init(void)
+void init()
 {
+    int tile = 0;
+    for(int y = d - 1; y >= 0; y--){
+        for(int x = d - 1; x >= 0; x--){
+            board[y][x] = tile;
+            tile++;
+        }
+    }
+    // Switch places of 1 and 2 if there are and odd number of tiles.
+    if(d % 2 == 0){ 
+        board[d - 1][d - 2] = 2;
+        board[d - 1][d - 3] = 1;
+    }
 }
 
 /**
@@ -163,7 +175,12 @@ void init(void)
  */
 void draw(void)
 {
-    // TODO
+    for(int y = 0; y < d; y++){
+        for(int x = 0; x < d; x++){
+            board[y][x] > 0 ? printf("%2d ", board[y][x]) : printf(" _");
+        }
+        printf("\n");
+    }
 }
 
 /**
