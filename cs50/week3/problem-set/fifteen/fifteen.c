@@ -156,7 +156,6 @@ void greet(void)
  */
 void init(void)
 {
-    // TODO
 }
 
 /**
