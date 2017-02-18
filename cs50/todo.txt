@@ -6,3 +6,5 @@ week2/vigenere is much cleaner than caesar, but needs more comments
 week2/crack not working, and not pushed to main cs50 branch. Hopefully, I can finish later.
 
 Write comments for each assignment better explaining what their for, where their from and how they are checked.
+
+Rewrite week3/prom-set/find/helper.c with mergesort and binary search.
