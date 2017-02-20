@@ -21,7 +21,7 @@
 
 // constants
 #define DIM_MIN 3
-#define DIM_MAX 9
+#define DIM_MAX 10
 
 // board
 int board[DIM_MAX][DIM_MAX];
@@ -36,6 +36,7 @@ void init(void);
 void draw(void);
 bool move(int tile);
 bool won(void);
+bool juggle(int, int, int, int);
 
 int main(int argc, string argv[])
 {
@@ -48,10 +49,10 @@ int main(int argc, string argv[])
 
     // ensure valid dimensions
     d = atoi(argv[1]);
-    if (d < DIM_MIN || d > DIM_MAX)
+    if (d < DIM_MIN || d > DIM_MAX - 1)
     {
         printf("Board must be between %i x %i and %i x %i, inclusive.\n",
-            DIM_MIN, DIM_MIN, DIM_MAX, DIM_MAX);
+            DIM_MIN, DIM_MIN, DIM_MAX - 1, DIM_MAX - 1);
         return 2;
     }
 
@@ -127,6 +128,7 @@ int main(int argc, string argv[])
     // close log
     fclose(file);
 
+
     // success
     return 0;
 }
@@ -147,7 +149,7 @@ void greet(void)
 {
     clear();
     printf("WELCOME TO GAME OF FIFTEEN\n");
-    usleep(2000000);
+    usleep(200000);
 }
 
 /**
@@ -156,13 +158,24 @@ void greet(void)
  */
 void init()
 {
-    int tile = 0;
-    for(int y = d - 1; y >= 0; y--){
-        for(int x = d - 1; x >= 0; x--){
+    int x, y, tile;
+    // Initialize tiles with -1 for the "edges" of the board.
+    for(y = 0; y < DIM_MAX; y++){
+        for(x = 0; x < DIM_MAX; x++){
+            board[y][x] = -1;
+        }
+    }
+    
+    // Write each tile in backwards on the "working board," size
+    // determined by the user.
+    tile = 0;
+    for(y = d - 1; y >= 0; y--){
+        for(x = d - 1; x >= 0; x--){
             board[y][x] = tile;
             tile++;
         }
     }
+    
     // Switch places of 1 and 2 if there are and odd number of tiles.
     if(d % 2 == 0){ 
         board[d - 1][d - 2] = 2;
@@ -190,9 +203,33 @@ void draw(void)
 bool move(int tile)
 {
     // TODO
+    int x = (tile - 1) % d, y = (tile - 1) / d;
+    printf("%d, %d", x, y);
+    
+    if(y != 0 && !board[y - 1][x]){
+        return juggle(x, y, x, y - 1);
+    }
+    
+    if(y != d && !board[y + 1][x]){
+        return juggle(x, y, x, y + 1);
+    }
+    
+    if(x != 0 && !board[y][x - 1]){
+        return juggle(x, y, x - 1, y);
+    }
+    
+    if(x != d && !board[y][x + 1]){
+        return juggle(x, y, x + 1, y);
+    }
+    
     return false;
 }
 
+bool juggle(int nx, int ny, int bx, int by){
+    board[by][bx] = board[ny][nx];
+    board[ny][nx] = 0;
+    return true;
+}
 /**
  * Returns true if game is won (i.e., board is in winning configuration), 
  * else false.
@@ -200,5 +237,17 @@ bool move(int tile)
 bool won(void)
 {
     // TODO
+    int tile = 1;
+    for(int y = 0; y < d; y++){
+        for(int x = 0; x < d; x++){
+            if(x == (d - 1) && y == (d - 1)){
+                return board[y][x] == 0;
+            }else if(board[y][x] != tile){
+                return false;
+            }
+            tile++;
+        }
+    }
+    
     return false;
 }
