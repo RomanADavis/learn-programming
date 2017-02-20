@@ -9,7 +9,7 @@ int main(void){
     }
     
     // Uses pointer math to access elements of arrays.
-    for(int i = 0, length = strlen(s) + 1; i < length; i++){
+    for(int i = 0, length = strlen(s); i < length; i++){
         printf("%c\n", *(s + i));
     }
 }
