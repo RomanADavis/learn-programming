@@ -10,12 +10,14 @@ int main(void){
     printf("y: ");
     int y = get_int();
     
+    printf("*swapping*\n");
     swap(&x, &y);
     
     printf("x: %d\n", x);
     printf("y: %d\n", y);
 }
 
+// Uses pointers to change variables from inside of a function.
 void swap(int *x, int *y){
     int temp = *x;
     *x = *y;
