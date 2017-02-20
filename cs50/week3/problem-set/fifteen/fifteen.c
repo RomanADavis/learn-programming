@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 // constants
 #define DIM_MIN 3
@@ -188,11 +189,16 @@ void init()
  */
 void draw(void)
 {
+    printf("\n");
     for(int y = 0; y < d; y++){
         for(int x = 0; x < d; x++){
-            board[y][x] > 0 ? printf("%2d ", board[y][x]) : printf(" _");
+            if(x == 0){
+                board[y][x] == 0? printf("_ ") : printf("%2d ", board[y][x]);
+            }else{
+                board[y][x] == 0? printf(" _ ") : printf("%2d ",board[y][x]);
+            }
         }
-        printf("\n");
+        printf("\n%s", y == d ? "" : "\n");
     }
 }
 
@@ -202,11 +208,24 @@ void draw(void)
  */
 bool move(int tile)
 {
-    // TODO
-    int x = (tile - 1) % d, y = (tile - 1) / d;
-    printf("%d, %d", x, y);
+    bool found;
+    int x, y;
+    // Find position.
+    for(y = 0; y < d; y++){
+        for(x = 0; x < d; x++){
+            if(board[y][x] == tile){
+                found = true;
+                break;
+            }
+        }
+        if(found){
+            break;
+        }
+    }
+    //printf("%d, %d", x, y);
     
-    if(y != 0 && !board[y - 1][x]){
+    // Check for blanks
+    if(y && !board[y - 1][x]){
         return juggle(x, y, x, y - 1);
     }
     
@@ -214,7 +233,7 @@ bool move(int tile)
         return juggle(x, y, x, y + 1);
     }
     
-    if(x != 0 && !board[y][x - 1]){
+    if(x && !board[y][x - 1]){
         return juggle(x, y, x - 1, y);
     }
     
