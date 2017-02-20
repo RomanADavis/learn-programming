@@ -1,6 +1,4 @@
-#include <cs50.h>
-
 typedef struct{
-    string name;
-    string dorm;
+    char *name;
+    char *dorm;
 }student;
