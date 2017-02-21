@@ -13,7 +13,7 @@ data takes up.
 3.  How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
 
 A byte is one byte, a word is two bytes, dword and long are both four bytes, but a long has a 
-sign byte whereas a dword does not. 
+sign bit whereas a dword does not. 
 
 4.  What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? 
 Leading bytes used to identify file formats (with high probability) are generally called "magic 
@@ -23,33 +23,65 @@ numbers."
 
 5.  What’s the difference between bfSize and biSize?
 
-
+According to the documentation at https://msdn.microsoft.com/en-us/library/dd183376(v=vs.85).aspx
+BfSize is the size of the bitmap file in bytes, which seems clear enough, and could even be
+inferred from the name. biSize is a little less clear, saying it's "the size of the structure."
+biSize is part of BITMAPINFOHEADER, which seems to contain a lot of metadata for the BMP
+file, so from context I'm given to think that, it seems like biSize is the size of just the BMP's
+metadata.
 
 6.  What does it mean if biHeight is negative?
+
+This is copied from the documentation. I read it but don't understand it. :(
+
+
+
+    The height of the bitmap, in pixels. If biHeight is positive, the bitmap is a bottom-up DIB 
+    and its origin is the lower-left corner. If biHeight is negative, the bitmap is a top-down 
+    DIB and its origin is the upper-left corner.
+
+    If biHeight is negative, indicating a top-down DIB, biCompression must be either BI_RGB or 
+    BI_BITFIELDS. Top-down DIBs cannot be compressed.
+
+    If biCompression is BI_JPEG or BI_PNG, the biHeight member specifies the height of the 
+    decompressed JPEG or PNG image file, respectively.
 
 
 
 7.  What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
 
-
+biBitCount
 
 8.  Why might fopen return NULL in lines 24 and 32 of copy.c?
 
+A quick look at "man fopen" says that fopen and it's relatives will return NULL if it fails.
+I don't find this particularly informative.
 
+A quick look at http://stackoverflow.com/questions/5987626/why-does-fopen-return-a-null-pointer
+suggests a few more actionable possibilities. It could be that you aren't allowed to open that
+file in that mode on that system due to OS permissions. It could be that your system doesn't
+allow certain kinds of filenames, for example, one containing a newline.
 
 9.  Why is the third argument to fread always 1 in our code?
 
-
+Having 1 as the third argument means "get 1 of members #{second_argument} bits long." In this
+case, we're getting 1 element because we're iterating over the file.
 
 10. What value does line 65 of copy.c assign to padding if bi.biWidth is 3?
 
-
+(4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4
+(4 - (3 * sizeof(RGBTRIPLE)) % 4) % 4
+(4 - (3 * 3) % 4) % 4
+(4 - 9 % 4) % 4
+(4 - 1) % 4
+3 % 4
+3
 
 11. What does fseek do?
 
-
+sets the file position
 
 12. What is SEEK_CUR?
 
-
+the file position
 
