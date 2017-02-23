@@ -13,5 +13,25 @@ int main(int argc, char *argv[]){
         return 2;
     }
     
+    bool ended = false
+    char block[512], filename[7];
+    
+    while(!ended){
+        fread(&block, 1, 512, raw)
+        if(is_jpeg(block)){
+            continue;
+        }
+        //start reading into new jpeg
+        
+        char current_byte
+        do{
+            
+        }while();
+    }
+    printf("%lu\n", sizeof(*raw));
     return 0;
+}
+
+bool is_jpeg(char *block){
+    block[0] == 0xff && block[1] == 0xd8 && block[2] == 0xff && (block[4] & Oxf0) == 0xe0
 }
