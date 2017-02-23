@@ -18,11 +18,9 @@ int main(int argc, char *argv[])
     
     int n = atoi(argv[1]);
     if(n < 1){
-        fprintf(stderr, "%d is not a positive number.", n);
-        return 2;
+        fprintf(stderr, "N must be a positive integer.\n");
+        return 1;
     }
-    
-    
     // remember filenames
     char *infile = argv[2];
     char *outfile = argv[3];
@@ -32,7 +30,7 @@ int main(int argc, char *argv[])
     if (inptr == NULL)
     {
         fprintf(stderr, "Could not open %s.\n", infile);
-        return 3;
+        return 2;
     }
 
     // open output file
@@ -41,7 +39,7 @@ int main(int argc, char *argv[])
     {
         fclose(inptr);
         fprintf(stderr, "Could not create %s.\n", outfile);
-        return 4;
+        return 3;
     }
 
     // read infile's BITMAPFILEHEADER
@@ -62,15 +60,9 @@ int main(int argc, char *argv[])
         return 4;
     }
     
-    // Update bitmap info header 
-    bi.biWidth *= n;
-    bi.biHeight *= n;
-    bi.biSizeImage *= n * n;
     
-    // Update bitmap file header
-    bf.bfSize = bi.biSizeImage + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
+
     // write outfile's BITMAPFILEHEADER
-    
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
 
     // write outfile's BITMAPINFOHEADER
@@ -82,19 +74,15 @@ int main(int argc, char *argv[])
     // iterate over infile's scanlines
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
     {
+        // temporary storage
+        RGBTRIPLE *triple = malloc((n * bi.biWidth) * sizeof(RGBTRIPLE));
         // iterate over pixels in scanline
         for (int j = 0; j < bi.biWidth; j++)
         {
-            // temporary storage
-            RGBTRIPLE triple;
-
             // read RGB triple from infile
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
-
+            fread(&triple[j], sizeof(RGBTRIPLE), 1, inptr);
             // write RGB triple to outfile
-            for(int x = 0; x < n; x++){
-                fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
-            }
         }
 
         // skip over padding, if any
