@@ -1,13 +1,12 @@
 #include <cs50.h>
-
-typedef struct node{
+// Bit of code started for talking about linked lists.
+typedef struct{
     int value;
     struct node *next;
-}
-node;
+}node;
 
 // both delete and remove and remove are highlighted (reserved?) words.
-void pop(node *list, int value){
+int pop(node *list, int value){
     
 }
 
