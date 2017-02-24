@@ -20,6 +20,7 @@ int main(int argc, char *argv[]){
         return 2;
     }
     
+    FILE *jpeg;
     BYTE block[512];
     char filename[7];
     int filecount = 0, block_size;
@@ -33,11 +34,12 @@ int main(int argc, char *argv[]){
     while(block_size == 512){
         filecount += 1;
         sprintf(filename, "%03d.jpg", filecount);
-        FILE *jpeg = fopen(filename, "w");
+        jpeg = fopen(filename, "w");
         do{
             fwrite(block, 1, 512, jpeg);
             block_size = fread(&block, 1, 512, raw);
         }while(!is_jpeg(block) && block_size == 512);
+        fclose(jpeg);
     }
     
     return 0;
