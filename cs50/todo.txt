@@ -1,4 +1,5 @@
 week1/credit.c works, but the code is messy and barely readable. Would like to refactor in the future.
+week1's problem's should go in individual folders
 
 week2/lecture_examples should have more comments
 week2/ceasar works, but isn't very clever. There's probably a smarter, more efficient way to write the code.
