@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
     FILE *jpeg;
     BYTE block[512];
     char filename[7];
-    int filecount = 0, block_size;
+    int filecount = -1, block_size;
     
     do{
        block_size = fread(&block, 1, 512, raw);
