@@ -24,10 +24,10 @@ int main(int argc, char *argv[]){
     char filename[7];
     int filecount = 0, block_size;
     
-    {do{
+    do{
        block_size = fread(&block, 1, 512, raw);
-        printf("%x %x %x %x\n", block[0], block[1], block[3], block[4]);
-        getch();
+        //printf("%x %x %x %x\n", block[0], block[1], block[3], block[4]);
+        //getch();
     }while(!is_jpeg(block));
     
     while(block_size == 512){
@@ -40,7 +40,6 @@ int main(int argc, char *argv[]){
         }while(!is_jpeg(block) && block_size == 512);
     }
     
-    printf("%lu\n", sizeof(*raw));
     return 0;
 }
 
