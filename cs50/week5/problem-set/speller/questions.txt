@@ -10,8 +10,12 @@ returns the usage (Yes, I didn't find the man page very edifying.)
 2.  Per that same man page, how many members are in a variable of type 
 struct rusage?
 
+Ten if I didn't miscount.
+
 3.  Why do you think we pass before and after by reference (instead of 
 by value) to calculate, even though we’re not changing their contents?
+
+An rusage struct.
 
 4.  Explain as precisely as possible, in a paragraph or more, how main 
 goes about reading words from a file. In other words, convince us that 
