@@ -1,0 +1,14 @@
+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+#+#+#+#+ Measures of Algo speed
+#+#+#+#+#+#+#+#+#+#+#+#+#+#
+
+There are 3 ways to measure the speed of an algo. Sometimes this is called the computational
+complexity. I have no idea why.
+
+The three methods are O called big O, which measures the worst case, drawn with an omega
+smbol and called big omega, which measures the best case and a third method, drawn with a
+theta, which applies with both are the same.
+
+Each of these are measured by the largest order of magnitude, because that takes up the
+vast majority of the steps when an algo is being applied to the largest amount of 
+computational work.
