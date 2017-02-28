@@ -4,4 +4,4 @@
 
   <?php the_content(); ?>
 
-</div><--- ./blog-post --->
+</div><!-- ./blog-post -->
