@@ -1,1 +1,1 @@
-print("{}".format(1 / 10))
+print("{:.55}".format(1 / 10))
