@@ -1,7 +1,7 @@
 import cs50
 import sys
 
-if len(sys.argv) !+ 2:
+if len(sys.argv) != 2:
     print("Takes one argument.")
     exit(1)
     
