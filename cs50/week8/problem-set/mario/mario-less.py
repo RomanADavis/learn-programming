@@ -1,3 +1,8 @@
+# Implements the "less comfortable" version of mario in python.
+# Spec is here: http://docs.cs50.net/problems/mario/less/mario.html
+# Request to implement in python here:
+# http://docs.cs50.net/2017/x/psets/6/pset6.html
+# Code by Roman Davis
 import cs50
 
 def main():
