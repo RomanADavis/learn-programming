@@ -1,3 +1,12 @@
+# Program that takes in a number as a command line argument and
+# uses it as a guide for the rotation in a caesar cypher.
+# Spec here: http://docs.cs50.net/problems/caesar/caesar.html
+# Assignment to convert from C to python here:
+# http://docs.cs50.net/2017/x/psets/6/pset6.html
+# Code by Roman Davis
+# Code honestly seems a little dumb and unpythonic, though it's a
+# very faithful translation of my C solution.
+
 import cs50
 import sys
 
