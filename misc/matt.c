@@ -8,7 +8,7 @@ int main(void){
     float price;
     char *code;
     
-    printf("X C O M P U T E R S]\n");
+    printf("X C O M P U T E R S\n");
     printf("0 1 2 3 4 5 6 7 8 9\n");
     
     printf("Enter price: ");
