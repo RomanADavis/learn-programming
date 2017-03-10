@@ -15,3 +15,7 @@ Rewrite week4/resize to take a float and shrink images
 Finish speller in week5
 
 Add lecture examples for week6
+
+week8/casesar is really dumb.
+crack should be filled out eventually
+sentiments should be done ASAP
