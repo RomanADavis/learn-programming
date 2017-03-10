@@ -1,3 +1,12 @@
+# Implement Luhnz's algorithm to check for valid credit card and uses
+# some hueristics to determine the card type. Spec here:
+# 
+# http://docs.cs50.net/problems/credit/credit.html
+#
+# Instructions to convert from C here:
+#
+# http://docs.cs50.net/2017/x/psets/6/pset6.html
+
 import cs50
 
 def main():
