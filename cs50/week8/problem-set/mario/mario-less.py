@@ -3,6 +3,7 @@
 # Request to implement in python here:
 # http://docs.cs50.net/2017/x/psets/6/pset6.html
 # Code by Roman Davis
+
 import cs50
 
 def main():
@@ -11,7 +12,9 @@ def main():
 
 def draw_pyramid(n):
     for layer in range(n):
-        print(" " * (n - layer - 1)  + (layer + 2) * "#") # Cheating?
+        alignment = " " * (n - layer - 1)
+        pyramid = "#" * (layer + 2)
+        print(alignment + pyramid) # Cheating?
         
 if __name__ == "__main__":
     main()
