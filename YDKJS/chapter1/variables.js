@@ -38,3 +38,4 @@ console.log( amount.toFixed( 2 ) ); // "215.98"
 // ES6+
 const TAX_RATE = 0.08;
 
+
