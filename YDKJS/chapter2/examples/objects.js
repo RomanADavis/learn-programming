@@ -21,3 +21,11 @@ obj["b"];
 //=>42
 obj["c"];
 //=>true
+
+// Since the hash style of accessing object variables uses
+// a string, you can store it in a variable.
+
+var a = "a";
+//=>undefined
+obj["a"];
+//=>"hello world"
