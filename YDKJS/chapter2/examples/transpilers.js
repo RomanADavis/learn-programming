@@ -22,5 +22,9 @@ function foo() {
     console.log( a );
 }
 
+void 0;
+// => undefined
+
 // This will still set the first argument to
 // 2 if no argument is given.
+
