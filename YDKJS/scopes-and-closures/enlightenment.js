@@ -36,3 +36,23 @@ baz();
 
 // Yeah, so this seems very much like my working definition of a closure from
 // before: a closure is when a function returns a function.
+
+function foo() {
+    var a = 2;
+    
+    function baz() {
+        console.log( a ); // 2
+    }
+    
+    bar( baz );
+}
+
+function bar(fn) {
+    fn(); // Huh.
+}
+
+foo();
+// 2
+
+// So, the book tends to expand this a bit and say that a function recieving a
+// function as an argument is *also* a closure. That makes sense.
