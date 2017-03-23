@@ -4,8 +4,8 @@ var hungry = "hippo";
 
 function awesome() {
     console.log(
-        hello( hungry ).toUpperCase();
-    )
+        hello( hungry ).toUpperCase()
+    );
 }
 
 export awesome;
