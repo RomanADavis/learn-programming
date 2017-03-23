@@ -1,0 +1,3 @@
+This is not the function itself. This is related to, but NOT the scope of the
+function. This is the place that a function is executed from, for that
+particular execution of the function.
