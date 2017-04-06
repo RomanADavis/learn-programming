@@ -10,3 +10,6 @@ a: 2
 
 myObject.hasOwnProperty( "a" ); //true
 myObject.hasOwnProperty( "b" ); //false
+
+// in checks for property names, which is a bummer if you like the behavior of
+// "in" in Ruby and Python.
