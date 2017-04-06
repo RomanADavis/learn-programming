@@ -14,3 +14,6 @@ var myObject = {
 };
 
 anotherArray.push( anotherObject, myObject );
+
+// If you want a deep copy and not just a bunch of references, you can use
+newObject = Object.assign({}, myobject);
