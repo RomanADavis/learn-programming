@@ -18,3 +18,20 @@ Object.defineProperty(
 
 myObject.a;// 2
 myObject.b;// 4
+
+// Getters and setters override object scope values
+var myObject = {
+  // define a getter for a
+  get a() {
+    return this._a_;
+  },
+
+  // difine a setter for a
+  set a(val) {
+    this._a_ = val * 2;
+  }
+};
+
+myObject.a = 2;
+
+myObject.a; //4
