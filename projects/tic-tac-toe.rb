@@ -1,7 +1,7 @@
 class Board
   attr_accessor :cells
   def initialize
-    self.cells = Array.new(3) {Array.new(3) {Cell.new}}
+    self.cells = Array.new(3) {Array.new(3) {""}}
   end
 
   def draw
@@ -9,7 +9,7 @@ class Board
     self.cells.each do |row|
       row.each do |cell|
         number += 1
-        print " #{cell.empty? ? number : cell.value} "
+        print " #{cell.empty? ? number : cell} "
       end
       puts ""
     end
@@ -30,18 +30,18 @@ class Board
 
   def []=(number, value)
     x, y = coordinates(number)
-    self.cells[x][y].value = value
+    self.cells[x][y] = value
   end
 
   def horizontal_win?
-    self.cells.each {|row| return true if row.uniq.length == 1}
+    self.cells.each {|row| return true if row.uniq.length == 1 && !row[0].empty?}
     false
   end
 
   def vertical_win?
     self.cells.length.times do |index|
       column = self.cells.map {|row| row[index]}
-      return true if column.uniq.length == 1
+      return true if column.uniq.length == 1 && !column[0].empty?
     end
     false
   end
@@ -49,8 +49,8 @@ class Board
   def diagonal_win?
     forward = self.cells.map.with_index {|row, index| row[index]}
     backward = self.cells.reverse.map.with_index {|row, index| row[index]}
-    return true if forward.uniq.length == 1
-    return true if forward.uniq.length == 1
+    return true if forward.uniq.length == 1 && !forward[0].empty?
+    return true if backward.uniq.length == 1 && !backward[0].empty?
     false
   end
 
@@ -59,17 +59,6 @@ class Board
       row.each {|cell| return false if cell.empty? }
     end
     true
-  end
-end
-
-class Cell
-  attr_accessor :value
-  def initialize
-    self.value = ""
-  end
-
-  def empty?
-    self.value.empty?
   end
 end
 
@@ -86,6 +75,8 @@ class Game
       play_turn(self.players[player])
       player = (player + 1) % 2
     end
+    self.board.draw
+    puts "Game over."
   end
 
   def play_turn(player)
