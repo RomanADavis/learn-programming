@@ -1,15 +1,18 @@
-def bubble_sort(array)
+def bubble_sort_by(array)
   sorted = false
   until sorted
     sorted = true
     (array.length - 1).times do |index|
-      if array[index + 1] < array[index]
+      if yield(array[index], array[index + 1]) > 0
         array[index], array[index + 1] = array[index + 1], array[index]
         sorted = false
       end
     end
   end
-  array
 end
 
-p bubble_sort([4,3,78,2,0,2])
+
+bubble_sort_by(test = ["hi","hello","hey"]) do |left,right|
+  left.length - right.length
+end
+p test
