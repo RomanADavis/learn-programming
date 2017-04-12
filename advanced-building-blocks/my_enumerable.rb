@@ -9,7 +9,7 @@ module Enumerable
 
   def my_select
     result = []
-    self.each {|element| result << element if yield(element)}
+    self.my_each {|element| result << element if yield(element)}
     result
   end
 end
