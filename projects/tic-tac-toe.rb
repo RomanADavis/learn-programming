@@ -60,7 +60,7 @@ class Board
     self.cells.each do |row|
       row.each {|cell| return false if cell.empty? }
     end
-    true
+    "The cat"
   end
 end
 
@@ -73,12 +73,12 @@ class Game
 
   def play
     player = 0
-    until over?
+    until winner?
       play_turn(self.players[player])
       player = (player + 1) % 2
     end
     self.board.draw
-    puts "Game over."
+    puts "Game over. #{winner?} won!"
   end
 
   def play_turn(player)
@@ -98,11 +98,11 @@ class Game
     end
   end
 
-  def over?
-    return true if self.board.horizontal_win?
-    return true if self.board.vertical_win?
-    return true if self.board.diagonal_win?
-    return true if self.board.full?
+  def winner? # This is really hacky. :/
+    return self.board.horizontal_win? if self.board.horizontal_win?
+    return self.board.vertical_win? if self.board.vertical_win?
+    return self.board.diagonal_win? if self.board.diagonal_win?
+    return self.board.full? if self.board.full?
     false
   end
 end
