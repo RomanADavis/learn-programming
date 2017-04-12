@@ -34,14 +34,16 @@ class Board
   end
 
   def horizontal_win?
-    self.cells.each {|row| return true if row.uniq.length == 1 && !row[0].empty?}
+    self.cells.each do |row|
+      return row.first if row.uniq.length == 1 && !row.first.empty?
+    end
     false
   end
 
   def vertical_win?
     self.cells.length.times do |index|
       column = self.cells.map {|row| row[index]}
-      return true if column.uniq.length == 1 && !column[0].empty?
+      return column.first if column.uniq.length == 1 && !column.first.empty?
     end
     false
   end
@@ -49,8 +51,8 @@ class Board
   def diagonal_win?
     forward = self.cells.map.with_index {|row, index| row[index]}
     backward = self.cells.reverse.map.with_index {|row, index| row[index]}
-    return true if forward.uniq.length == 1 && !forward[0].empty?
-    return true if backward.uniq.length == 1 && !backward[0].empty?
+    return forward.first if forward.uniq.length == 1 && !forward.first.empty?
+    return forward.first if backward.uniq.length == 1 && !backward.first.empty?
     false
   end
 
