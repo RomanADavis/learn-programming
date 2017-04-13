@@ -1,0 +1,13 @@
+Some elements require matching tags on both ends. They receive most of their
+content from their attributes. These include:
+
+<br>
+<img>
+<meta>
+<wbr>
+<embed>
+<input>
+<param>
+<hr>
+<link>
+<source>
