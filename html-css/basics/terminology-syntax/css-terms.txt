@@ -1,0 +1,54 @@
+The syntax of a piece of CSS, sometimes called a style:
+
+selector {
+  first-property: some-value;
+  second-property: another-value;
+}
+
+# Selectors
+###############
+A selector tells the program where style will be applied. There are three kinds
+of selectors.
+
+type selectors - Target a type of element. For example, the p selector targets.
+paragraph elements.
+
+id selectors - Targets a particular element, designated with an id attribute.
+For example, if you wanted a style for your favorite cat picture, in your CSS,
+you might write
+
+#favorite-cat {
+  some-property: some-values;
+}
+
+And in your html, you might write:
+
+<img id="favorite-cat">
+
+class selectors - Target a class of elements. They work more or less the same as
+id selectors, but are meant to work with more than element on a page. So for a
+style for cat pictures, you might write:
+
+.cat-picture {
+  some-property: some-value;
+}
+
+<img class="cat-picture">
+
+# Properties
+###############
+Properties designate *how* we want to change the style. So, if we wanted to
+change the color of text in the paragraphs on our website, we might write:
+
+p {
+  color: some-value;
+}
+
+# Values
+###############
+Values let us fill in specific information. So if we want the paragraphs on our
+website to have orange text, we can write:
+
+p {
+  color: orange;
+}
