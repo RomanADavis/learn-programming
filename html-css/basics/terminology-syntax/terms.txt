@@ -1,0 +1,17 @@
+Elements
+
+Elements are designators that define the structure of objects within the page.
+
+Elements are designated by a name surrounded by diamond brackets(<>).
+
+Examples:
+
+Header elements <h1> <h6>
+
+Paragraghs <p>
+
+Links <a href="#">
+
+Divs <div>
+
+Style <span> <strong>
