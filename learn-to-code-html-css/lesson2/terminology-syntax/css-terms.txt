@@ -1,0 +1,12 @@
+## Block Elements
+##################
+Block level element stack on each other and occupy all available width
+
+## Inline Element
+##################
+Inline elements follow the flow of the page and only maintain the width of their
+content. They can be nested inside each other but cannot wrap block elements.
+
+## CSS Comments
+################
+/* Here's a CSS Comment */
