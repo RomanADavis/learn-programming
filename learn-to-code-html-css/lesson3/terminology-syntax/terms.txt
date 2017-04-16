@@ -1,0 +1,19 @@
+## Cascade
+#############
+CSS code cascades from the top, so that the property files are applied in order
+from top to bottom. If different values are applied to the same property of the
+same selector, the one at the bottom is applied will override the one at the
+top.
+
+## Specificity
+###############
+CSS properties also take precedence based on how specific they are. More
+specific means higher precedence. So, id selectors have higher precedence than
+class selectors and class selectors have higher precedence than type selectors.
+
+## Specificity Points
+######################
+Each of these specificities are associated with a numerical value.
+id selectors have 1-0-0 specificity.
+class selectors have 0-1-0 specificity.
+type selectors have 0-0-1 specificity.
