@@ -58,3 +58,10 @@ that would normally go to the side but is a block level element.
 ## footer
 ##################
 For information that would go at the foot of a page or section of a page.
+
+## Special Character Encodings
+###################################
+You can make certain special characters appear inside the browser with sequences
+of characters called character encodings. To call a character encoding just type
+&name; where the name will depend on the character you want to have appear. So,
+in order to make a copyright symbol appear, you'd just type &copy;
