@@ -1,0 +1,32 @@
+## Absolute Lengths
+####################
+Give an absolute value in some unit of measurement.
+
+## Pixel
+A unit that's becoming less popular but is very reliable and easy to understand
+is the pixel.
+
+p {
+  font-size: 14px;
+}
+
+## Relative measurements
+#######################
+A unit of measurement relative to the size of something else such as the size of
+the browser window.
+
+## Percentages
+A unit based on the size of the element's parent element.
+
+.col {
+  width: 50%; // Sets the width to 50% of it's parent's.
+}
+
+## Em
+Size relative to parent element's font size. So if the parent unit's font size
+is 15, 5em is a font size of 70.
+
+.banner {
+  font-size: 14px;
+  width: 5em; // 70px
+}
