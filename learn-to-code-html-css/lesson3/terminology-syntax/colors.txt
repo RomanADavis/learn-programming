@@ -1,0 +1,35 @@
+## Keyword Colors
+##################
+Call up colors with keyword values. Easy and convenient, but somewhat limited.
+
+p {
+  color: blue;
+}
+
+## Hexadecimal Colors
+#####################
+Color syntax that uses 3 two digit or one digit hexadecimal values for the color
+
+p {
+  color: FFF; // equivalent
+}
+
+p {
+  color: FFFFFF; // equivalent
+}
+
+## rgb() and rgba
+###################
+We can also call up colors with the rgb and rgba syntax. These act like
+functions. They each take three values from 0 to 255 representing their hex
+value. In effect, rgb acts the exact same way as hexadecimal except with decimal
+numbers. rgba takes a fourth value between 0 and 1 representing opacity, with 0
+being invisible and 1 being opaque.
+
+p {
+  color: rgb(255, 255, 255); // black
+}
+
+p {
+  color: rgba(255, 255, 255, 0.5); // black at half opacity
+}

@@ -7,7 +7,7 @@ top.
 
 ## Specificity
 ###############
-CSS properties also take precedence based on how specific they are. More
+CSS properties also take precedence based on how specific they are. Moredi
 specific means higher precedence. So, id selectors have higher precedence than
 class selectors and class selectors have higher precedence than type selectors.
 
