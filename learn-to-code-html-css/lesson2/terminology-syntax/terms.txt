@@ -1,0 +1,71 @@
+## Semantic HTML
+##################
+Using the proper element to give structure to a page. x
+
+## Block Elements
+##################
+Block level element stack on each other and occupy all available width
+
+## Inline Element
+##################
+Inline elements follow the flow of the page and only maintain the width of their
+content. They can be nested inside each other but cannot wrap block elements.
+
+## HTML Comments
+#################
+<!-- Here's an HTML comment -->
+
+## CSS Comments
+################
+/* Here's a CSS Comment */
+
+## Headings
+###############
+Headings are used to establish the hierarchy of the page.
+<h1> Highest Level Heading </h1>
+<h6> Lowest Level Heading </h6>
+
+## Paragraphs
+##############
+Paragraphs break up chunks of text.
+<p> Donald Trump is a humble American hero. </p>
+
+## strong vs bold
+##############
+Stylistically, they do the same thing. They bold text. But strong is supposed to
+emphasize the importance of text semantically.
+
+## em vs i
+#############
+em is for emphasis
+i is for a change in voice, similar to putting something in quotes.
+
+## divs and spans
+##################
+Only exist to form classes for styling, with no semantic content.
+
+## header
+##################
+Element for the heading of a page or a part of a page.
+
+## nav
+##################
+Identifies a section with major navigation links on a page
+
+## article
+##################
+Used for self contained pieces of information, such as blog posts.
+
+## section
+##################
+Used for thematically linked parts of a page. Usually the sort of thing that has
+or could sensibly have it's own header.
+
+## aside
+##################
+For information tangential to the information surrounding it. Useful for info
+that would normally go to the side but is a block level element.
+
+## footer
+##################
+For information that would go at the foot of a page or section of a page.
