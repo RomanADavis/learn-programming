@@ -1,0 +1,16 @@
+## Display
+#############
+The display element determines how a block will be displayed. The attributes it
+can take are block, in-line, inline block or none.
+
+## block
+As a block, elements will start on a new line.
+
+## inline
+Follows the flow of the page, starting on the same line.
+
+## inline block
+Like inline, but with a height and width.
+
+## none
+Element is invisible.
