@@ -1,0 +1,83 @@
+## Box Model
+Every element is a box. Boxes have height and width, but also have padding,
+margins and borders. Each one acts a layer surrounding the box, with padding
+being the innermost and margins being the outermost.
+
+You can add their respective heights and widths to get the size that a box
+takes.
+
+So, for the width:
+
+margin-left + border-left + padding-left + width + padding-right + border-right + margin-right
+
+and for height it would be:
+
+margin-top + border-top + padding-top + height + padding-bottom + border-right + border-right
+
+## Width
+Is 100% by default on block elements. Has no meaning on inline elements. Inline-
+block width will exepand to fit it's content.
+
+## Height
+By default, will expand and vertically to fit it's content, but can be set on
+non inline elements.
+
+## Margin
+Margins make space around on the element and are completely transparent.
+margin-top is not accessible to inline elemets.
+
+## Padding
+Works like margin, but outside the border. Will show up on inline elementsm but
+may "blend" with elements above and below.
+
+There are several styles: solid, border-radius (rounded borders), double,
+dashed, dotted, none, etc.
+
+For both padding and margins, we can use a shorthand syntax in a few different
+ways:
+
+div {
+  padding: 8px; // sets all sides
+}
+
+div {
+  padding: 8px 14px; //vertical padding first, horizontal second
+}
+
+div {
+  padding: 12 4 8 18; //top, right, bottom, left
+}
+
+We can also use longhand syntax, explicit writing out each padding we want to
+make.
+
+div {
+  margin-top: 10px;
+  padding-left: 6px;
+}
+
+## Border
+Border has three properties: width, style and color. There are several styles:
+solid, double, dashed, dotted, none, etc.
+
+Shorthand syntax:
+div {
+  border: 5px dashed blue;
+}
+
+Longhand:
+div {
+  border-width: 5px;
+  border-style: dashed;
+  border-color: blue;
+}
+
+You can get even finer grained than that, controlling each side of the border.
+div {
+  border-bottom: 10px solid green;
+}
+
+We can even go longhand again.
+div {
+  border-bottom-width: 12px;
+}
