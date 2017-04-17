@@ -1,0 +1,22 @@
+## Box-Sizing
+The normal box model called content-box, is not necessarily the right tool for
+the job. We can change how the box model itself works with the box-sizing
+property.
+
+div {
+  box-sizing: content-box;
+}
+
+To support older browser, you may want to use the vendor prefixes.
+div {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+}
+
+## Padding Box
+One alternative is padding box, which includes padding in the width and height
+calculations.
+
+## Border Box
+Includes borders in height and width calculations. Is probably the best to use.
