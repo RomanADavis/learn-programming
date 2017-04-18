@@ -1,0 +1,15 @@
+## Floats
+Allow us to take an image out of the normal flow of the page and position it to
+the left or right of it's parent element.
+
+div {
+  float: right;
+}
+
+## clear
+Float is mostly used to allow content to wrap around content. Clear prevents
+content wrapping. You can clear one side or both.
+
+div {
+  clear: left;
+}
