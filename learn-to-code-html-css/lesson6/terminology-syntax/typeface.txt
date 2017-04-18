@@ -3,3 +3,70 @@ The artistic impression of how text looks, feels, and reads.
 
 ## Font
 A font is a file containing a typeface.
+
+## Color
+Sets the color of the text.
+
+body {
+  color: #555;
+}
+
+## Font family
+Pick the typeface. In case the typeface can not be used for some reason (for
+example, because it's not installed on the user's computer), then font-family
+can take multiple typefaces and attempts to apply them from left to right until
+one works.
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+## Font size
+Sets the size of the text.
+
+body {
+ font-size: 14px;
+}
+
+# Font style
+Mostly determines rather text is in italics or not.
+
+.special {
+  font-style: italic;
+}
+
+# Font variant
+Mostly determines rather a text uses small caps or not.
+
+.firm {
+  font-variant: small-caps;
+}
+
+# Font-weight
+Determines rather text is bold or not. Can be given a numeric value to be made
+more or less bold.
+
+.daring {
+  font-weight: 600;
+}
+
+# Line height
+Sets the distance between lines of text. Is sometimes used as a way to center
+single lines of text by setting an elements height and line height to the same
+value.
+
+.btn {
+  height: 22px;
+  line-height: 22px;
+}
+
+# Shorthand HTML Properties
+Font properties are in order and optional except for font-size and font-family.
+
+body {
+  font: italc small-caps bold 14px/22px Helvetic, Arial, sans-serrif;
+}
+
+# Pseudo classes
+after a selector we can some times add :keyword to change the style selector.
+So, a:hover will select the style of links that are being hovered over.
