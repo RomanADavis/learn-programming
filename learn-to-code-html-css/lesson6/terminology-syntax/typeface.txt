@@ -1,0 +1,5 @@
+## Typeface
+The artistic impression of how text looks, feels, and reads.
+
+## Font
+A font is a file containing a typeface.
