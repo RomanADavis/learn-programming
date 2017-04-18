@@ -1,0 +1,9 @@
+The position CSS attribute can have a few different values
+
+## Relative
+Takes position offset to give it's position on the site. Preserves the flow of
+the page.
+
+## Absolute
+Takes position offsets to give it's positon on the site. Does NOT preserve the
+flow of the page.
