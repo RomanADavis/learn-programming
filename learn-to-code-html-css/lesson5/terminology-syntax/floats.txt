@@ -13,3 +13,6 @@ content wrapping. You can clear one side or both.
 div {
   clear: left;
 }
+
+## clearfix
+Practice of containing floats in another element to clear them.
