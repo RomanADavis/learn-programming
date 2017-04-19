@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -52,7 +51,6 @@ table {
   Grid
   ============================================================================
 */
-
 *,
 *:before,
 *:after {
@@ -99,22 +97,64 @@ table {
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.teaser a:hover h3 {
+  color: a9b2b9;
+}
 /*
   ============================================================================
   Typography
   ============================================================================
 */
-
 h1, h3, h4, h5, p {
   margin-bottom: 22px;
+  color: #648880;
+}
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+h3 {
+  font-size: 21px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  color: #a9b2b9;
+  font-size: 14px;
+  font-weight: 400;
 }
 
+strong {
+  font-weight: 400;
+}
+
+cite, em {
+  font-style: italic;
+}
+
+/*
+  ============================================================================
+  Links
+  ============================================================================
+*/
+
+a:hover {
+  color: #a9b2b9;
+}
+a {
+  color: #648880;
+}
 /*
   ============================================================================
   Buttons
   ============================================================================
 */
-
 .btn {
   border-radius: 5px;
   display: inline-block;
@@ -127,15 +167,20 @@ h1, h3, h4, h5, p {
 }
 
 .hero {
+  line-height: 44px
   padding: 22px 80px 66px 80px;
 }
-
+.hero h2 {
+  font-size: 36px;
+}
+.hero p {
+  font-size: 24px;
+}
 /*
   ============================================================================
   Clearfix
   ============================================================================
 */
-
 .group: before,
 .group: after {
   content: "";
@@ -154,10 +199,12 @@ h1, h3, h4, h5, p {
   Primary header
   ============================================================================
 */
-
 .logo {
   border-top: 4px solid #648880;
   float: left;
+  font-size: 48px;
+  line-height: 44px;
+  padding: 40px 0 22px 0;
 }
 
 /*
@@ -165,12 +212,34 @@ h1, h3, h4, h5, p {
   Primary footer
   ============================================================================
 */
-
 .primary-footer small {
   float: left;
+  font-weight: 400;
 }
 
 .primary-footer {
+  color: 644480;
+  font-size: 14px;
   padding-bottom: 44px;
   padding-top: 44px;
+}
+
+/*
+  ============================================================================
+  Primary Nav
+  ============================================================================
+*/
+.primary-nav {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/*
+  ============================================================================
+  Custm Styles
+  ============================================================================
+*/
+body {
+  color: #888;
+  font: 300 16px/22px "Open Sans", "Helvetic Neue", Helvetica, Arial, sans-serrif;
 }
