@@ -1,0 +1,61 @@
+## Text align
+Aligns text. It's proper values mostly do what you'd expect: left, right,
+center, justify and inherit.
+
+p {
+  text-align: center;
+}
+
+## Text decoration
+Mostly used to underline text. Comes in the values underline, overline,
+line-through, inherit.
+
+.note {
+  text-decoration: underline;
+}
+
+## Text indent
+Indents the first line, like a paragraph, by a certain length. Can take negative
+values.
+
+p {
+  indent: 20px;
+}
+
+## Text shadow
+Draws a text shadow. Takes four values. The first is the horizontal offset, the
+second is the vertical offset, the third is the blur radius, the fourth is the
+color.
+
+p {
+  text-shadow: 3px 6px 2px blue;
+}
+
+It can take an optional 4th length value before the color for the spread of the
+shadow, making shadows larger and smaller than the image itself with negative
+and positive values.
+
+Text shadow can create multiple shadows with commas.
+
+## Text transform
+Changes capitalization of text. Can have the values none, capitalize, uppercase,
+lowercase and inherit.
+
+p {
+  text-transform: uppercase;
+}
+
+## Letter spacing
+Sets the amount of space between each letter. Positive values are farther apart,
+negative values are closer togethr.
+
+p {
+  letter-spacing: -.5em;
+}
+
+## Word spacing
+Like letter spacing, but for words.
+
+p {
+  word-spacing: 5em;
+}
