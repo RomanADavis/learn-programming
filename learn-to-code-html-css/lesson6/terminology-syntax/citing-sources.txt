@@ -1,0 +1,15 @@
+## Cite
+Cite elements are used to surround links that show sources.
+
+## Quote
+Quote elements are used to surround quotations. The can have a site attribute
+that takes a link. They are automatically displayed with quotes.
+
+<q cite="http://google.com">I found this on google</q>
+
+## Blockquote
+For long quotes that cross multiple lines.
+
+<blockquote>In the beginning, God created the heavens and the earth. And the
+earth was without form and void and God's spirit moved upon the waters.
+</blockquote>
