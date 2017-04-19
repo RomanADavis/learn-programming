@@ -173,6 +173,7 @@ p a {
 }
 
 .hero {
+  clear: both;
   line-height: 44px
   padding: 22px 80px 66px 80px;
   text-align: center;
@@ -182,6 +183,7 @@ p a {
 }
 .hero p {
   font-size: 24px;
+  font-weight: 100;
 }
 /*
   ============================================================================
@@ -210,8 +212,11 @@ p a {
   border-top: 4px solid #648880;
   float: left;
   font-size: 48px;
+  font-weight: 100;
+  letter-spacing: .5px;
   line-height: 44px;
   padding: 40px 0 22px 0;
+  text-transform: uppercase;
 }
 
 .tag-line {
@@ -254,7 +259,7 @@ p a {
 */
 body {
   color: #888;
-  font: 300 16px/22px "Open Sans", "Helvetic Neue", Helvetica, Arial, sans-serrif;
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetic Neue", Helvetica, Arial, sans-serrif;
 }
 
 /*
