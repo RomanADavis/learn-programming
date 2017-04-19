@@ -1,0 +1,24 @@
+## Web-Safe Fonts
+Some fonts will work on nearly any device. These include:
+
+* Arial
+* Garamond
+* Lucida Sans, Lucida Grande, Lucida
+* Tahoma
+* Trebuchet
+* Courier New, Courier
+* Georgia
+* Palatino Liontype
+* Times New Roman, Times
+* Verdana
+
+## Embedded Web Fonts
+What if we could just include our fonts with the webpage?
+
+@font-face {
+  font-family: "Lobster";
+  src: local("Lobster"), url("lobster.woff") format("woff");
+}
+body {
+  font-family: "Lobster", "Comic Sans", cursive;
+}
