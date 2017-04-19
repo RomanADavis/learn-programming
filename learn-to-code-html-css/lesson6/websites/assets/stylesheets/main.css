@@ -128,6 +128,7 @@ h5 {
   color: #a9b2b9;
   font-size: 14px;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 strong {
@@ -149,6 +150,11 @@ a:hover {
 }
 a {
   color: #648880;
+  text-decoration: none;
+}
+
+p a {
+  border-bottom: 1px solid #dfe2e5;
 }
 /*
   ============================================================================
@@ -169,6 +175,7 @@ a {
 .hero {
   line-height: 44px
   padding: 22px 80px 66px 80px;
+  text-align: center;
 }
 .hero h2 {
   font-size: 36px;
@@ -207,6 +214,10 @@ a {
   padding: 40px 0 22px 0;
 }
 
+.tag-line {
+  margin: 66px 0 22px 0;
+  text-align: right;
+}
 /*
   ============================================================================
   Primary footer
@@ -232,6 +243,8 @@ a {
 .primary-nav {
   font-size: 14px;
   font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
 
 /*
@@ -242,4 +255,14 @@ a {
 body {
   color: #888;
   font: 300 16px/22px "Open Sans", "Helvetic Neue", Helvetica, Arial, sans-serrif;
+}
+
+/*
+  ============================================================================
+  Navigation
+  ============================================================================
+*/
+
+.nav {
+  text-align: right;
 }
