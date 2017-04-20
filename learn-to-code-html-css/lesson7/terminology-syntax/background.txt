@@ -1,0 +1,28 @@
+## Background Color
+div {
+  background-color: blue;
+}
+
+## Background Image
+div {
+  background-image: url("wallpaper.jpg");
+}
+
+## Background Repeat
+Determines rather a background will repeat or not.
+
+div {
+  background-repeat: no-repeat;
+}
+
+## Background Position
+Adjusts the position by a horizontal offset and a vertical offset.
+
+div {
+  background-position: 20px 10px;
+}
+
+# Shorthand
+div {
+  background: url("wallpaper.jpg") 20px 10px no-repeat;
+}
