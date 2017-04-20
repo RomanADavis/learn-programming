@@ -29,5 +29,25 @@ div {
 
 ## Background Gradient
 div {
-  background: gradient(#fff, #000);
+  background: liner-gradient(#fff, #000);
+}
+
+## Direction
+div {
+  background: linear-gradient(to right bottom, #fff. #000);
+}
+
+## Multiple Colors
+div {
+  background: linear-gradient(#fff, #000, #fff);
+}
+
+## Stops
+div {
+  background: linear-gradient(#fff, #000 80%, #fff);
+}
+
+##  Radial Pattern
+div {
+  background: radial-gradient(#fff #000);
 }
