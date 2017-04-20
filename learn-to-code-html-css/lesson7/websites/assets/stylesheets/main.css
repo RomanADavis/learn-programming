@@ -208,6 +208,7 @@ p a {
   Primary header
   ============================================================================
 */
+
 .logo {
   border-top: 4px solid #648880;
   float: left;
@@ -258,6 +259,7 @@ p a {
   ============================================================================
 */
 body {
+  background: #293f50;
   color: #888;
   font: 300 16px/22px "Lato", "Open Sans", "Helvetic Neue", Helvetica, Arial, sans-serrif;
 }
