@@ -22,7 +22,12 @@ div {
   background-position: 20px 10px;
 }
 
-# Shorthand
+## Shorthand
 div {
   background: url("wallpaper.jpg") 20px 10px no-repeat;
+}
+
+## Background Gradient
+div {
+  background: gradient(#fff, #000);
 }
