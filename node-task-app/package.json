@@ -13,6 +13,7 @@
   "author": "Roman Davis",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^4.15.2"
   }
 }
