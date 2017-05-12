@@ -11,5 +11,8 @@
     "url": "https://github.com/RomanADavis/learn-programming/node-task-app"
   },
   "author": "Roman Davis",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
