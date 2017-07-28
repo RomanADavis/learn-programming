@@ -7,6 +7,11 @@
 var canvas;
 var canvasContext;
 
+function colorRect(leftX, topY, width, height, color) {
+  canvasContext.fillStyle = color;
+  canvasContext.fillRect(leftX, topY, width, height, color);
+}
+
 var ball = {
   x: 5, // needs to be set away from the edge so it doesn't "bounce" off the
   y: 5, // screen.
@@ -14,6 +19,7 @@ var ball = {
   xSpeed: 5,
   ySpeed: 5,
   color: 'red',
+
   move: function() {
     // bounce off the sides
     if (ball.x >= (canvas.width - ball.diameter) || ball.x <= 0) {
@@ -27,19 +33,26 @@ var ball = {
     ball.x += ball.xSpeed;
     ball.y += ball.ySpeed;
   },
+
   draw: function() {
-    canvasContext.fillStyle = ball.color;
-    canvasContext.fillRect(ball.x, ball.y, ball.diameter, ball.diameter);
+    colorRect(ball.x, ball.y, ball.diameter, ball.diameter, ball.color);
   }
 };
 
+var background = {
+  color: 'black',
+
+  draw: function() {
+    colorRect(0, 0, canvas.width, canvas.height, background.color);
+  }
+}
 var framesPerSecond = 30;
 
 window.onload = function() {
   canvas = document.getElementById('gameCanvas');
   canvasContext = canvas.getContext('2d');
 
-  setInterval(tick, 1000 / 30);
+  setInterval(tick, 1000 / framesPerSecond);
 }
 
 function tick() {
@@ -52,13 +65,8 @@ function move() {
 }
 
 function draw() {
-  drawBackground();
+  background.draw();
   ball.draw();
-}
-
-function drawBackground() {
-  canvasContext.fillStyle = 'black';
-  canvasContext.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function drawPaddle() {
