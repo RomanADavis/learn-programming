@@ -1,15 +1,35 @@
 <html>
-Check out this game!
+<p>
+  Check out this game!
+</p>
 <canvas id="gameCanvas" width="800" height="600"></canvas>
 <script>
 var canvas;
 var canvasContext;
+var ballX = 50;
+var ballY = 50;
 
 window.onload = function() {
   canvas = document.getElementById('gameCanvas');
   canvasContext = canvas.getContext('2d');
+  setInterval(drawEverything, 25);
+}
+
+function drawEverything() {
+  drawBackground();
+  drawBall();
+}
+
+function drawBackground() {
   canvasContext.fillStyle = 'black';
   canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+function drawBall() {
+  ballX += 1;
+  ballY += 1;
+  canvasContext.fillStyle = 'red';
+  canvasContext.fillRect(ballX, ballY, 25, 25);
 }
 </script>
 </html>
