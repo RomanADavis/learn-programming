@@ -7,14 +7,30 @@
 var canvas;
 var canvasContext;
 
+function calculateMousePosition(evt) {
+  var rect = canvas.getBoundingClientRect();
+  var root = document.documentElement;
+  var mouseX = evt.clientX - rect.left - root.scrollLeft;
+  var mouseY = evt.clietY - rect.top - root.scrollTop;
+
+  return { x: mouseX, y: mouseY};
+}
+
 function colorRect(leftX, topY, width, height, color) {
   canvasContext.fillStyle = color;
   canvasContext.fillRect(leftX, topY, width, height, color);
 }
 
+function colorCircle(centerX, centerY, radius, drawColor) {
+  canvasContext.fillStyle = drawColor;
+  canvasContext.beginPath();
+  canvasContext.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
+  canvasContext.fill();
+}
+
 var ball = {
-  x: 5, // needs to be set away from the edge so it doesn't "bounce" off the
-  y: 5, // screen.
+  x: 10, // needs to be set away from the edge so it doesn't "bounce" off the
+  y: 10, // screen.
   radius: 5,
   xSpeed: 5,
   ySpeed: 5,
@@ -22,11 +38,11 @@ var ball = {
 
   move: function() {
     // bounce off the sides
-    if (ball.x >= (canvas.width - ball.radius * 2) || ball.x <= 0) {
+    if (ball.x >= (canvas.width - ball.radius) || ball.x <= ball.radius) {
       ball.xSpeed *= -1;
     }
     // bounce off the bottom and top
-    if (ball.y >= (canvas.height - ball. radius * 2) || ball.y <= 0) {
+    if (ball.y >= (canvas.height - ball. radius) || ball.y <= ball.radius) {
       ball.ySpeed *= -1;
     }
 
@@ -35,10 +51,7 @@ var ball = {
   },
 
   draw: function() {
-    canvasContext.fillStyle = ball.color;
-    canvasContext.beginPath();
-    canvasContext.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2, true);
-    canvasContext.fill();
+    colorCircle(ball.x, ball.y, ball.radius, ball.color);
   }
 };
 
