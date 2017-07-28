@@ -6,12 +6,14 @@
 <script>
 var canvas;
 var canvasContext;
+var leftPaddle;
+var rightPaddle;
 
 function calculateMousePosition(evt) {
   var rect = canvas.getBoundingClientRect();
   var root = document.documentElement;
   var mouseX = evt.clientX - rect.left - root.scrollLeft;
-  var mouseY = evt.clietY - rect.top - root.scrollTop;
+  var mouseY = evt.clientY - rect.top - root.scrollTop;
 
   return { x: mouseX, y: mouseY};
 }
@@ -28,17 +30,50 @@ function colorCircle(centerX, centerY, radius, drawColor) {
   canvasContext.fill();
 }
 
+function newPaddle(x) {
+  return {
+    x: x,
+    y: 250,
+    width: 10,
+    height: 100,
+    color: 'white',
+    draw: function() {
+      colorRect(this.x, this.y, this.width, this.height, this.color);
+    },
+
+    auto: function() {
+      var center = this.y + (this.height / 2);
+      if ((center + 35) > ball.y) {
+        this.y -= 6;
+      } else if((center - 35) < ball.y) {
+        this.y += 6;
+      }
+    }
+  }
+}
+
+
 var ball = {
-  x: 10, // needs to be set away from the edge so it doesn't "bounce" off the
-  y: 10, // screen.
-  radius: 5,
+  x: 20, // needs to be set away from the edge so it doesn't "bounce" off the
+  y: 20, // screen.
+  radius: 10,
   xSpeed: 5,
   ySpeed: 5,
   color: 'red',
 
   move: function() {
     // bounce off the sides
-    if (ball.x >= (canvas.width - ball.radius) || ball.x <= ball.radius) {
+    if (ball.x <= ball.radius + leftPaddle.width) {
+      if(!(ball.y <= leftPaddle.y + leftPaddle.height && ball.y >= leftPaddle.y)) {
+        ball.reset();
+      }
+      ball.xSpeed *= -1;
+    }
+
+    if(ball.x >= (canvas.width - ball.radius)) {
+      if(!(ball.y <= rightPaddle.y + rightPaddle.height && ball.y >= rightPaddle.y)) {
+        ball.reset();
+      }
       ball.xSpeed *= -1;
     }
     // bounce off the bottom and top
@@ -51,7 +86,12 @@ var ball = {
   },
 
   draw: function() {
-    colorCircle(ball.x, ball.y, ball.radius, ball.color);
+    colorCircle(ball.x, ball.y, ball.radius, this.color);
+  },
+
+  reset: function() {
+    this.x = canvas.width / 2;
+    this.y = canvas.height / 2;
   }
 };
 
@@ -62,13 +102,22 @@ var background = {
     colorRect(0, 0, canvas.width, canvas.height, background.color);
   }
 }
-var framesPerSecond = 30;
 
 window.onload = function() {
   canvas = document.getElementById('gameCanvas');
   canvasContext = canvas.getContext('2d');
+  leftPaddle = newPaddle(0);
+  rightPaddle = newPaddle(canvas.width - 10)
+
+  var framesPerSecond = 30;
 
   setInterval(tick, 1000 / framesPerSecond);
+
+  canvas.addEventListener('mousemove',
+          function(evt) {
+            var mousePos = calculateMousePosition(evt);
+            leftPaddle.y = mousePos.y - leftPaddle.height / 2;
+          });
 }
 
 function tick() {
@@ -78,16 +127,14 @@ function tick() {
 
 function move() {
   ball.move();
+  rightPaddle.auto();
 }
 
 function draw() {
   background.draw();
   ball.draw();
-}
-
-function drawPaddle() {
-  var paddleHeight = 100;
-  var paddleWidth = 10;
+  leftPaddle.draw();
+  rightPaddle.draw();
 }
 
 </script>
