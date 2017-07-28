@@ -15,18 +15,18 @@ function colorRect(leftX, topY, width, height, color) {
 var ball = {
   x: 5, // needs to be set away from the edge so it doesn't "bounce" off the
   y: 5, // screen.
-  diameter: 10,
+  radius: 5,
   xSpeed: 5,
   ySpeed: 5,
   color: 'red',
 
   move: function() {
     // bounce off the sides
-    if (ball.x >= (canvas.width - ball.diameter) || ball.x <= 0) {
+    if (ball.x >= (canvas.width - ball.radius * 2) || ball.x <= 0) {
       ball.xSpeed *= -1;
     }
     // bounce off the bottom and top
-    if (ball.y >= (canvas.height - ball.diameter) || ball.y <= 0) {
+    if (ball.y >= (canvas.height - ball. radius * 2) || ball.y <= 0) {
       ball.ySpeed *= -1;
     }
 
@@ -35,7 +35,10 @@ var ball = {
   },
 
   draw: function() {
-    colorRect(ball.x, ball.y, ball.diameter, ball.diameter, ball.color);
+    canvasContext.fillStyle = ball.color;
+    canvasContext.beginPath();
+    canvasContext.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2, true);
+    canvasContext.fill();
   }
 };
 
