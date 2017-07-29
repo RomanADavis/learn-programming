@@ -12,5 +12,5 @@ window.onload = function() {
   Game.canvas.addEventListener('mousemove', function(event) {
     mousePosition = calculateMousePosition(event);
     Game.paddle.x = mousePosition.x - Game.paddle.width / 2;
-  })
+  });
 }
