@@ -8,6 +8,8 @@ var canvas;
 var canvasContext;
 var leftPaddle;
 var rightPaddle;
+var gameOver = false;
+const WINNING_SCORE = 3;
 
 function calculateMousePosition(evt) {
   var rect = canvas.getBoundingClientRect();
@@ -43,12 +45,19 @@ function newPaddle(x) {
     },
 
     auto: function() {
-      var center = this.y + (this.height / 2);
-      if ((center + 35) > ball.y) {
+      if ((this.center() + 35) > ball.y) {
         this.y -= 6;
-      } else if((center - 35) < ball.y) {
+      } else if((this.center() - 35) < ball.y) {
         this.y += 6;
       }
+    },
+
+    bottom: function() {
+      return this.y + this.height;
+    },
+
+    center: function() {
+      return this.y + (this.height / 2);
     }
   }
 }
@@ -63,36 +72,49 @@ var ball = {
   color: 'red',
 
   move: function() {
-    // bounce off the right side
+
     if (ball.x <= ball.radius + leftPaddle.width) {
+      // miss
       if(!(ball.y <= leftPaddle.y + leftPaddle.height && ball.y >= leftPaddle.y)) {
-        rightPaddle.score++;
-        ball.reset();
-      }
-      ball.xSpeed *= -1;
+        this.reset(rightPaddle);
+      } // hit
+      // change angle of shot depending on where the ball hits the paddle
+      ball.ySpeed = (ball.y - leftPaddle.center()) * .35;
+      ball.xSpeed *= -1; // bounce off the left side
     }
 
     if(ball.x >= (canvas.width - ball.radius)) {
+      // miss
       if(!(ball.y <= rightPaddle.y + rightPaddle.height && ball.y >= rightPaddle.y)) {
-        leftPaddle.score++;
-        ball.reset();
-      }
-      ball.xSpeed *= -1;
-    }
-    // bounce off the bottom and top
-    if (ball.y >= (canvas.height - ball. radius) || ball.y <= ball.radius) {
-      ball.ySpeed *= -1;
+        this.reset(leftPaddle);
+      } // hit
+      // change angle of shot depending on where the ball hits the paddle
+      ball.ySpeed = (ball.y - rightPaddle.center()) * .35;
+      ball.xSpeed *= -1; //bounce off the right side
     }
 
-    ball.x += ball.xSpeed;
-    ball.y += ball.ySpeed;
+    // bounce off the bottom and top
+    if (ball.y >= (canvas.height - ball. radius) || ball.y <= ball.radius) {
+      ball.ySpeed *= -1
+    }
+
+    this.x += ball.xSpeed;
+    this.y += ball.ySpeed;
   },
 
   draw: function() {
     colorCircle(ball.x, ball.y, ball.radius, this.color);
   },
 
-  reset: function() {
+  reset: function(paddle) {
+    paddle.score += 1;
+
+    if(paddle.score >= WINNING_SCORE) {
+      leftPaddle.score = 0;
+      rightPaddle.score = 0;
+      gameOver = true;
+    }
+
     this.x = canvas.width / 2;
     this.y = canvas.height / 2;
   }
@@ -103,6 +125,20 @@ var background = {
 
   draw: function() {
     colorRect(0, 0, canvas.width, canvas.height, background.color);
+  },
+
+  drawNet: function() {
+    for(var i = 0; i < canvas.height; i += 40) {
+      colorRect(canvas.width / 2 - 1, i, 2, 20, 'white');
+    }
+  }
+}
+
+function gameReset() {
+  if(gameOver){
+    leftPaddle.score = 0;
+    rightPaddle.score = 0;
+    gameOver = false;
   }
 }
 
@@ -115,6 +151,8 @@ window.onload = function() {
   var framesPerSecond = 30;
 
   setInterval(tick, 1000 / framesPerSecond);
+
+  canvas.addEventListener('mouseclick', gameReset);
 
   canvas.addEventListener('mousemove',
           function(evt) {
@@ -135,6 +173,14 @@ function move() {
 
 function draw() {
   background.draw();
+  background.drawNet();
+
+  if (gameOver) {
+    canvasContext.fillStyle = 'white';
+    canvasContext.fillText("Click to Continue", 100, 100);
+    return;
+  }
+
   ball.draw();
   leftPaddle.draw();
   rightPaddle.draw();
