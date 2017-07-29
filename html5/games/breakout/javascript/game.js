@@ -8,6 +8,7 @@ var Game = {
     background.draw();
     this.paddle.draw();
     this.ball.draw();
+    colorText(mouse.x + "," + mouse.x, mouse.x, mouse.y);
   },
 
   move: function() {

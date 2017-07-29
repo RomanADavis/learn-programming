@@ -10,10 +10,7 @@ function colorCircle(centerX, centerY, radius, color) {
   Game.canvasContext.fill();
 }
 
-function calculateMousePosition(event) {
-  var rect = Game.canvas.getBoundingClientRect();
-  var root = document.documentElement;
-  var mouseX = event.clientX - rect.left - root.scrollLeft;
-  var mouseY = event.clientY - rect.top - root.scrollTop;
-  return {x: mouseX, y: mouseY};
+function colorText(text, x, y, color) {
+  Game.canvasContext.fillStyle = color;
+  Game.canvasContext.fillText(text, x, y);
 }

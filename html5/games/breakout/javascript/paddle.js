@@ -12,6 +12,10 @@ var Paddle = {
 
       draw: function() {
         colorRect(this.x, this.y, this.width, this.height, this.color);
+      },
+
+      center: function() {
+        return this.x + this.width / 2;
       }
     };
   }

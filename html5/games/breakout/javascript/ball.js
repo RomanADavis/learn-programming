@@ -44,7 +44,9 @@ var Ball = {
            this.y - this.radius <= Game.paddle.y &&
            this.x + this.radius >= Game.paddle.x &&
            this.x - this.radius <= Game.paddle.x + Game.paddle.width) {
+
           this.ySpeed *= -1;
+          this.xSpeed = (Game.paddle.center() - this.x) * .35;
         }
 
         this.x += this.xSpeed;
