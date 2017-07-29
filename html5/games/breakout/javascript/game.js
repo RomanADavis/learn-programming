@@ -8,6 +8,8 @@ var Game = {
     background.draw();
     this.paddle.draw();
     this.ball.draw();
+
+    for(var i=0; i < this.bricks.)
     colorText(mouse.x + "," + mouse.x, mouse.x, mouse.y);
   },
 
