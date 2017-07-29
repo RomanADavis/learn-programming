@@ -22,7 +22,15 @@ var Ball = {
 
       move: function() {
         // bounce off bottom & top
-        if(this.y + this.radius >= Game.canvas.height || this.y <= this.radius) {
+        if(this.y + this.radius >= Game.canvas.height) {
+          if(this.x + this.radius >= Game.paddle.x && this.x - this.radius <= Game.paddle.x + Game.paddle.width){
+            this.ySpeed *= -1;
+          }else{
+            this.reset();
+          }
+        }
+
+        if(this.y <= this.radius){
           this.ySpeed *= -1;
         }
 
@@ -41,7 +49,11 @@ var Ball = {
 
         this.x += this.xSpeed;
         this.y += this.ySpeed;
-      }
-    };
+    },
+
+    reset: function() {
+      this.x = Ball.x();
+      this.y = Ball.y();
+    }
   }
-};
+}};

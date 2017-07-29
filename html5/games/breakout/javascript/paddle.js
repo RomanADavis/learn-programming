@@ -7,7 +7,7 @@ var Paddle = {
       width: this.width,
       height: this.height,
       x: Game.canvas.width / 2 - this.width / 2,
-      y: Game.canvas.height - 100,
+      y: Game.canvas.height - this.width,
       color: "white",
 
       draw: function() {
