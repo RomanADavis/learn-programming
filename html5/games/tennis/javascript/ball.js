@@ -9,46 +9,46 @@ Ball = {
       color: 'red',
 
       move: function() {
-        if (ball.x <= ball.radius + leftPaddle.width) {
+        if (this.x <= this.radius + leftPaddle.width) {
           // miss
-          if(!(ball.y <= leftPaddle.y + leftPaddle.height && ball.y >= leftPaddle.y)) {
+          if(!(this.y <= leftPaddle.y + leftPaddle.height && this.y >= leftPaddle.y)) {
             this.reset(rightPaddle);
           } // hit
-          // change angle of shot depending on where the ball hits the paddle
-          ball.ySpeed = (ball.y - leftPaddle.center()) * .35;
-          ball.xSpeed *= -1; // bounce off the left side
+          // change angle of shot depending on where the this hits the paddle
+          this.ySpeed = (this.y - leftPaddle.center()) * .35;
+          this.xSpeed *= -1; // bounce off the left side
         }
 
-        if(ball.x >= (canvas.width - ball.radius)) {
+        if(this.x >= (canvas.width - this.radius)) {
           // miss
-          if(!(ball.y <= rightPaddle.y + rightPaddle.height && ball.y >= rightPaddle.y)) {
+          if(!(this.y <= rightPaddle.y + rightPaddle.height && this.y >= rightPaddle.y)) {
             this.reset(leftPaddle);
           } // hit
-          // change angle of shot depending on where the ball hits the paddle
-          ball.ySpeed = (ball.y - rightPaddle.center()) * .35;
-          ball.xSpeed *= -1; //bounce off the right side
+          // change angle of shot depending on where the this hits the paddle
+          this.ySpeed = (this.y - rightPaddle.center()) * .35;
+          this.xSpeed *= -1; //bounce off the right side
         }
 
         // bounce off the bottom and top
-        if (ball.y >= (canvas.height - ball. radius) || ball.y <= ball.radius) {
-          ball.ySpeed *= -1
+        if (this.y >= (canvas.height - this.radius) || this.y <= this.radius) {
+          this.ySpeed *= -1
         }
 
-        this.x += ball.xSpeed;
-        this.y += ball.ySpeed;
+        this.x += this.xSpeed;
+        this.y += this.ySpeed;
       },
 
       draw: function() {
-        colorCircle(ball.x, ball.y, ball.radius, this.color);
+        colorCircle(this.x, this.y, this.radius, this.color);
       },
 
       reset: function(paddle) {
         paddle.score += 1;
 
-        if(paddle.score >= WINNING_SCORE) {
+        if(paddle.score >= Game.winningScore) {
           leftPaddle.score = 0;
           rightPaddle.score = 0;
-          gameOver = true;
+          Game.over = true;
         }
 
         this.x = canvas.width / 2;
