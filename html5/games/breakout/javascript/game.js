@@ -2,9 +2,11 @@ var Game = {
   canvas: null,
   canvasContext: null,
   ball: null,
+  paddle: null,
 
   draw: function() {
     background.draw();
+    this.paddle.draw();
     this.ball.draw();
   },
 

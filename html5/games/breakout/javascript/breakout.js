@@ -1,6 +1,7 @@
 window.onload = function() {
   Game.canvas = document.getElementById("gameCanvas");
   Game.canvasContext = Game.canvas.getContext("2d");
+  Game.paddle = Paddle.new();
   Game.ball = Ball.new();
 
   background.draw();

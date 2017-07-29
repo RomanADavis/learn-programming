@@ -1,4 +1,4 @@
-Ball = {
+var Ball = {
   x: function() {
     return Game.canvas.width / 2;
   },
