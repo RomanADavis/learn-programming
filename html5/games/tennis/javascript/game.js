@@ -24,9 +24,9 @@ Game = {
 
   reset: function() {
     if(gameOver){
-      this.leftPaddle.score = 0;
-      this.rightPaddle.score = 0;
-      this.gameOver = false;
+      leftPaddle.score = 0;
+      rightPaddle.score = 0;
+      Game.over = false;
     }
   },
 
