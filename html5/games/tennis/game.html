@@ -32,6 +32,7 @@ function colorCircle(centerX, centerY, radius, drawColor) {
 
 function newPaddle(x) {
   return {
+    score: 0,
     x: x,
     y: 250,
     width: 10,
@@ -54,17 +55,18 @@ function newPaddle(x) {
 
 
 var ball = {
-  x: 20, // needs to be set away from the edge so it doesn't "bounce" off the
-  y: 20, // screen.
+  x: 400, // needs to be set away from the edge so it doesn't "bounce" off the
+  y: 300, // screen.
   radius: 10,
   xSpeed: 5,
   ySpeed: 5,
   color: 'red',
 
   move: function() {
-    // bounce off the sides
+    // bounce off the right side
     if (ball.x <= ball.radius + leftPaddle.width) {
       if(!(ball.y <= leftPaddle.y + leftPaddle.height && ball.y >= leftPaddle.y)) {
+        rightPaddle.score++;
         ball.reset();
       }
       ball.xSpeed *= -1;
@@ -72,6 +74,7 @@ var ball = {
 
     if(ball.x >= (canvas.width - ball.radius)) {
       if(!(ball.y <= rightPaddle.y + rightPaddle.height && ball.y >= rightPaddle.y)) {
+        leftPaddle.score++;
         ball.reset();
       }
       ball.xSpeed *= -1;
@@ -135,6 +138,9 @@ function draw() {
   ball.draw();
   leftPaddle.draw();
   rightPaddle.draw();
+
+  canvasContext.fillText(leftPaddle.score, 100, 100);
+  canvasContext.fillText(rightPaddle.score, canvas.width - 100, 100)
 }
 
 </script>
