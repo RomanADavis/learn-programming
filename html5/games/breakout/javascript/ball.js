@@ -32,8 +32,8 @@ var Ball = {
         }
 
         // bounce off paddle
-        if(this.y + this.radius <= Game.paddle.y &&
-           this.y + this.radius >= Game.paddle.y + Game.paddle.height &&
+        if(this.y + this.radius >= Game.paddle.y &&
+           this.y - this.radius <= Game.paddle.y &&
            this.x + this.radius >= Game.paddle.x &&
            this.x - this.radius <= Game.paddle.x + Game.paddle.width) {
           this.ySpeed *= -1;
