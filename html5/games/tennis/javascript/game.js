@@ -3,6 +3,8 @@ var canvasContext;
 var leftPaddle;
 var rightPaddle;
 var gameOver = false;
+var ball = Ball.new();
+
 const WINNING_SCORE = 3;
 
 function gameReset() {

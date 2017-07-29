@@ -1,11 +1,14 @@
-  Paddle = {
+Paddle = {
+  width: 10,
+  height: 100,
+
   new: function(x) {
     return {
       score: 0,
       x: x,
-      y: 250,
-      width: 10,
-      height: 100,
+      y: (canvas.height / 2) - (this.height / 2), // center
+      width: this.width,
+      height: this.height,
       color: 'white',
       draw: function() {
         colorRect(this.x, this.y, this.width, this.height, this.color);
