@@ -51,11 +51,12 @@ var Ball = {
 
         this.x += this.xSpeed;
         this.y += this.ySpeed;
-    },
+      }, // move function,
 
-    reset: function() {
-      this.x = Ball.x();
-      this.y = Ball.y();
-    }
-  }
-}};
+      reset: function() {
+        this.x = Ball.x();
+        this.y = Ball.y();
+      } // reset function
+    } // ball object
+  } // new
+}; // Ball class
