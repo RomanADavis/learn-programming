@@ -14,3 +14,22 @@ function colorText(text, x, y, color) {
   Game.canvasContext.fillStyle = color;
   Game.canvasContext.fillText(text, x, y);
 }
+
+function brickCoords(x, y) {
+  var real_height = Brick.height + Brick.gap;
+  var real_width = Brick.width + Brick.gap;
+  var x = Math.floor(x  / real_width);
+  var y = Math.floor(y / real_height);
+
+  return {x: x, y: y};
+}
+
+function coordsToIndex(brickCoords) {
+  index = brickCoords.y * Brick.rows + brickCoords.x;
+
+  return index;
+}
+
+function brickIndex(x, y) {
+  return coordsToIndex(brickCoords(x, y));
+}

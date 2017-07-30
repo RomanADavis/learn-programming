@@ -20,7 +20,14 @@ var Ball = {
         colorCircle(this.x, this.y, this.radius, this.color);
       },
 
-      move: function() {
+      update: function() {
+
+        var index = brickIndex(this.x, this.y);
+
+        if (index >= 0 && index < Game.bricks.length) {
+          Game.bricks[index].break();
+        }
+
         // bounce off bottom & top
         if(this.y + this.radius >= Game.canvas.height) {
           if(this.x + this.radius >= Game.paddle.x && this.x - this.radius <= Game.paddle.x + Game.paddle.width){

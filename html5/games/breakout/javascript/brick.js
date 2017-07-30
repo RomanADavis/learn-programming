@@ -1,6 +1,9 @@
 var Brick = {
-  width: 100,
-  height: 50,
+  width: 50,
+  height: 25,
+  rows: 16,
+  columns: 16,
+  gap: 2,
 
   new: function(x, y, visible = true) {
     return {
@@ -25,15 +28,19 @@ var Brick = {
   setup: function() {
     var brick, visible;
     var bricks = [];
-    var gap = 2;
 
-    for(j = 0; j < 8; j++) {
-      for(var i = 0; i < 8; i++) {
+    this.width = Game.canvas.width / this.rows - this.gap
+
+    for(j = 0; j < this.columns; j++) {
+
+      for(var i = 0; i < this.rows; i++) {
         visible = Math.random()  < 0.5;
-        brick = Brick.new(i * (Brick.width + gap), j * (Brick.height + gap), visible);
+        brick = Brick.new(i * (this.width + this.gap), j * (this.height + this.gap), visible);
         bricks.push(brick);
       } // brick row loop
+
     } // brick wall loop
     return bricks;
   } // setup
+
 };// Brick class

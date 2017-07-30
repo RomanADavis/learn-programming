@@ -3,7 +3,7 @@ var Game = {
   canvasContext: null,
   ball: null,
   paddle: null,
-  bricks: Brick.setup(),
+  bricks: null,
 
   draw: function() {
     background.draw();
@@ -14,15 +14,15 @@ var Game = {
       this.bricks[i].draw();
     }
 
-    colorText(mouse.x + "," + mouse.x, mouse.x, mouse.y);
+    mouse.draw();
   },
 
-  move: function() {
-    this.ball.move();
+  update: function() {
+    this.ball.update();
   },
 
   tick: function() {
     Game.draw();
-    Game.move();
+    Game.update();
   }
 };
