@@ -3,7 +3,6 @@ window.onload = function() {
   Game.canvasContext = Game.canvas.getContext("2d");
   Game.paddle = Paddle.new();
   Game.ball = Ball.new();
-  Game.bricks = [];
 
   background.draw();
 
