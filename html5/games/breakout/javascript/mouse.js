@@ -19,7 +19,7 @@ var mouse = {
     return {x: mouse.x, y: mouse.y};
   },
 
-  draw() {
+  draw: function() {
     colorText(this.brickX + "," + this.brickY + ", index: " + brickIndex(this.x, this.y), this.x, this.y, "white");
   }
-}
+};

@@ -15,23 +15,46 @@ var Ball = {
       color: "white",
       xSpeed: 5,
       ySpeed: 5,
+      brickColumn: brickCoords(Ball.x(), Ball.y()).x,
+      brickRow: brickCoords(Ball.x(), Ball.y()).y,
 
       draw: function() {
         colorCircle(this.x, this.y, this.radius, this.color);
       },
 
       update: function() {
+        this.handle_bricks();
+        this.handle_walls();
+        this.handle_paddle();
 
-        // handles bricks
+        this.move();
+      }, // move function
+
+      reset: function() {
+        this.x = Ball.x();
+        this.y = Ball.y();
+      }, // reset function
+
+      handle_bricks: function() {
         var index = brickIndex(this.x, this.y);
 
         if (index >= 0 && index < Game.bricks.length) {
           if (Game.bricks[index].visible) {
             Game.bricks[index].break();
-            this.ySpeed *= -1 // bounce
+
+            var previousCoords = brickCoords(this.x -this.xSpeed, this.y - this.ySpeed);
+
+            if(previousCoords.y != this.brickColumn) {
+              this.ySpeed *= -1; // bounce
+            }
+            if(previousCoords.x != this.brickRow) {
+              this.xSpeed *= -1; // bounce
+            }
           }
         }
+      },// handles bricks
 
+      handle_walls: function() {
         // bounce off bottom & top
         if(this.y + this.radius >= Game.canvas.height) {
           if(this.x + this.radius >= Game.paddle.x && this.x - this.radius <= Game.paddle.x + Game.paddle.width){
@@ -49,25 +72,34 @@ var Ball = {
         if(this.x + this.radius >= Game.canvas.width || this.x <= this.radius) {
           this.xSpeed *= -1;
         }
+      },// handle walls,
 
+      handle_paddle: function() {
         // bounce off paddle
         if(this.y + this.radius >= Game.paddle.y &&
            this.y - this.radius <= Game.paddle.y &&
            this.x + this.radius >= Game.paddle.x &&
            this.x - this.radius <= Game.paddle.x + Game.paddle.width) {
 
-          this.ySpeed *= -1;
-          this.xSpeed = (Game.paddle.center() - this.x) * .35;
-        }
+          // More extreme angles the farther away from the center of the paddle
+          var delta = Math.abs(Game.paddle.center() - this.x);
+          // Maintain horizontal momentum
+          delta = this.xSpeed > 0 ? delta : delta * -1;
 
+          this.xSpeed = (delta) * 0.35;
+
+          this.ySpeed *= -1;
+        }
+      },
+
+      move: function() {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
-      }, // move function,
 
-      reset: function() {
-        this.x = Ball.x();
-        this.y = Ball.y();
-      } // reset function
-    } // ball object
+        var coords = brickCoords(this.x, this.y);
+        this.brickColumn = coords.x;
+        this.brickRow = coords.y;
+      },
+    }; // ball object
   } // new
 }; // Ball class

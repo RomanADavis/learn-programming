@@ -1,11 +1,11 @@
 var Brick = {
   width: 50,
-  height: 25,
+  height: 50,
   rows: 16,
-  columns: 16,
+  columns: 8,
   gap: 2,
 
-  new: function(x, y, visible = true) {
+  new: function(x, y, visible) {
     return {
       width: this.width,
       height: this.height,
@@ -29,7 +29,7 @@ var Brick = {
     var brick, visible;
     var bricks = [];
 
-    this.width = Game.canvas.width / this.rows - this.gap
+    this.width = Game.canvas.width / this.rows - this.gap;
 
     for(j = 0; j < this.columns; j++) {
 

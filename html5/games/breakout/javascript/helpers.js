@@ -18,8 +18,8 @@ function colorText(text, x, y, color) {
 function brickCoords(x, y) {
   var real_height = Brick.height + Brick.gap;
   var real_width = Brick.width + Brick.gap;
-  var x = Math.floor(x  / real_width);
-  var y = Math.floor(y / real_height);
+  x = Math.floor(x  / real_width);
+  y = Math.floor(y / real_height);
 
   return {x: x, y: y};
 }

@@ -16,4 +16,4 @@ window.onload = function() {
             var mousePos = calculateMousePosition(evt);
             leftPaddle.y = mousePos.y - leftPaddle.height / 2;
           });
-}
+};

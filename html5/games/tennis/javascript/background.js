@@ -13,6 +13,6 @@ var background = {
 
   drawScores: function() {
     canvasContext.fillText(leftPaddle.score, 100, 100);
-    canvasContext.fillText(rightPaddle.score, canvas.width - 100, 100)
+    canvasContext.fillText(rightPaddle.score, canvas.width - 100, 100);
   }
-}
+};

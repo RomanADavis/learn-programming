@@ -15,7 +15,7 @@ Ball = {
             this.reset(rightPaddle);
           } // hit
           // change angle of shot depending on where the this hits the paddle
-          this.ySpeed = (this.y - leftPaddle.center()) * .35;
+          this.ySpeed = (this.y - leftPaddle.center()) * 0.35;
           this.xSpeed *= -1; // bounce off the left side
         }
 
@@ -25,13 +25,13 @@ Ball = {
             this.reset(leftPaddle);
           } // hit
           // change angle of shot depending on where the this hits the paddle
-          this.ySpeed = (this.y - rightPaddle.center()) * .35;
+          this.ySpeed = (this.y - rightPaddle.center()) * 0.35;
           this.xSpeed *= -1; //bounce off the right side
         }
 
         // bounce off the bottom and top
         if (this.y >= (canvas.height - this.radius) || this.y <= this.radius) {
-          this.ySpeed *= -1
+          this.ySpeed *= -1;
         }
 
         this.x += this.xSpeed;

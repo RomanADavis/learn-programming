@@ -29,6 +29,6 @@ Paddle = {
       center: function() {
         return this.y + (this.height / 2);
       }
-    }
+    };
   }
-}
+};
