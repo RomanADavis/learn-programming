@@ -11,6 +11,11 @@ var mouse = {
     mouse.x = event.clientX - rect.left - root.scrollLeft;
     mouse.y = event.clientY - rect.top - root.scrollTop;
 
+    var coords = brickCoords(mouse.x, mouse.y);
+
+    mouse.brickX = coords.x;
+    mouse.brickY = coords.y;
+
     return {x: mouse.x, y: mouse.y};
   },
 

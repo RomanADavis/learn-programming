@@ -22,10 +22,14 @@ var Ball = {
 
       update: function() {
 
+        // handles bricks
         var index = brickIndex(this.x, this.y);
 
         if (index >= 0 && index < Game.bricks.length) {
-          Game.bricks[index].break();
+          if (Game.bricks[index].visible) {
+            Game.bricks[index].break();
+            this.ySpeed *= -1 // bounce
+          }
         }
 
         // bounce off bottom & top

@@ -34,7 +34,7 @@ var Brick = {
     for(j = 0; j < this.columns; j++) {
 
       for(var i = 0; i < this.rows; i++) {
-        visible = Math.random()  < 0.5;
+        visible = true; //Math.random()  < 0.5;
         brick = Brick.new(i * (this.width + this.gap), j * (this.height + this.gap), visible);
         bricks.push(brick);
       } // brick row loop
