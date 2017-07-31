@@ -1,6 +1,6 @@
 var Brick = {
   width: 50,
-  height: 50,
+  height: 25,
   rows: 16,
   columns: 8,
   gap: 2,
