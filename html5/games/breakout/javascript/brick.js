@@ -2,7 +2,7 @@ var Brick = {
   width: 50,
   height: 25,
   rows: 16,
-  columns: 8,
+  columns: 12,
   gap: 2,
 
   new: function(x, y, visible) {

@@ -34,8 +34,6 @@ var Game = {
     Game.ball = Ball.new();
     Game.bricks = Brick.setup();
 
-    background.draw();
-
     setInterval(Game.tick, 1000 / this.framesPerSecond);
 
     Game.canvas.addEventListener('mousemove', function(event) {

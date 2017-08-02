@@ -97,8 +97,8 @@ var Ball = {
         this.y += this.ySpeed;
 
         var coords = brickCoords(this.x, this.y);
-        this.brickRow = coords.x;
-        this.brickColumn = coords.y;
+        this.brickRow = coords.y;
+        this.brickColumn = coords.x;
       },
     }; // ball object
   } // new
