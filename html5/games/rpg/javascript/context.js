@@ -16,5 +16,26 @@ var Context = {
     this.context.rect(left, top, right, bottom);
     this.context.fillStyle = color;
     this.context.fill();
-  }
+  },
+
+  pattern: function(image) {
+    this.context.createPattern(image, "repeat");
+  },
+
+  fillrect: function(x, y, width, height) {
+    Context.context.fillrect(x, y, width, height);
+  },
+
+  image: function(image, x, y, width, height) {
+    this.context.drawImage(image, x, y, width, height);
+  },
+
+  save: function() {
+    this.context.save();
+  },
+
+  translate: function(x, y) {
+    this.context.translate(x, y);
+  },
+
 };
