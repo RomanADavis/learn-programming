@@ -2,15 +2,6 @@ var Sprite = {
   new: function(filename, is_pattern) {
     var image = new Image();
     image.src = filename;
-    var pattern = null;
-
-    if (filename != undefined && filename != "" && filename != null) {
-      if (is_pattern) {
-        pattern = Context.pattern(image);
-      }
-    } else {
-      console.log("ERROR: Unable to load sprite.");
-    }
 
     var sprite = {
       image: image,
