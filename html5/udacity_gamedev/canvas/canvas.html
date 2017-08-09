@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Start</title>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+</body>
+<script>
+
+var canvas = null;
+var context = null;
+var image = null;
+
+function setup() {
+  canvas = document.getElementById("canvas");
+  context = canvas.getContext("2d");
+  canvas.width = 1200;
+  canvas.height = 720;
+
+  image = new Image();
+  image.onload = onImageLoad;
+  image.src = "ralphyrobot.png";
+}
+
+function onImageLoad() {
+  console.log("Image loaded");
+  context.drawImage(image, 192, 192);
+}
+
+
+setup();
+
+</script>
+</html>

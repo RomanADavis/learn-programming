@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <title>Let VS Const</title>
+</head>
+<body>
+<script>
+  const key = "abc123"; // cannot be updated
+  let  points = 50; // cannot be declared twice
+  let winner = false;
+
+  if (points < 40) {
+    console.log("it ran!");
+    let winner = true; // unless it's in another block
+  }
+
+  points = 60;
+</script>
+</body>
+</html>
