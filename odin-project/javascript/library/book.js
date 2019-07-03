@@ -1,12 +1,13 @@
 const Library = function(books){
   this.books = books ? books : []
+}
 
-  this.addBook = function(book){
-    this.books.push(book)
-  }
+Library.prototype.addBook = function(book){
+  this.books.push(book)
+}
 
-  this.table = function(){
-    const headers = 
+Library.prototype.table = function(){
+  const headers = 
   `<tr>
     <td>Title</td>
     <td>Author</td>
@@ -15,7 +16,7 @@ const Library = function(books){
     <td>Delete</td>
   </tr>`
 
-    const newBookInput = 
+  const newBookInput = 
   `<tr>
     <td><input id='titleInput'/></td>
     <td><input id='authorInput'/></td>
@@ -24,8 +25,8 @@ const Library = function(books){
     <td><button onClick='addBook()'>Add Book</button></td>
   </tr>`
 
-    const content = this.books.map(book => {
-      return (
+  const content = this.books.map(book => {
+    return (
   `<tr>
     <td>${book.title}</td>
     <td>${book.author}</td>
@@ -33,42 +34,44 @@ const Library = function(books){
     <td><button onClick='toggleRead("${book.title}")'>${book.isRead ? "Read" : "Not Read"}</button></td>
     <td><button onClick='remove("${book.title}")'>Remove</button></td>
   </tr>`
-      )
-    }).join('\n')
+    )
+  }).join('\n')
 
-    return (
+  return (
 `<table>
   ${newBookInput}
   ${headers}
   ${content}
 </table>`)
-  }
+}
 
-  this.toggleRead = function(title){
-    this.books.forEach((book, index) => {
-      if(book.title == title){
-        return book.toggleRead()
-      }
-    })
-  }
+Library.prototype.toggleRead = function(title){
+  this.books.forEach((book, index) => {
+    if(book.title == title){
+      return book.toggleRead()
+    }
+  })
+}
 
-  this.remove = function(title){
-    this.books = this.books.filter(book => book.title != title)
-  }
+Library.prototype.remove = function(title){
+  title = title.replace("'", "&#39;")
+  this.books = this.books.filter(book => {
+    return book.title !== title
+  })
 }
 
 const Book = function(title, author, pages, isRead){
-  this.title = title
-  this.author = author
+  this.title = title.replace("'", "&#39;")
+  this.author = author.replace("'", "&#39;")
   this.pages = pages
   this.isRead = isRead ? true : false // expects a boolean, but defaults to false
-  
-  this.info = function(){
-    var readStatus = isRead ? 'read' : 'not read yet'
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}` 
-  }
+}
 
-  this.toggleRead = function(){
-    this.isRead = !this.isRead
-  }
+Book.prototype.info = function(){
+  var readStatus = isRead ? 'read' : 'not read yet'
+  return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}` 
+}
+
+Book.prototype.toggleRead = function(){
+  this.isRead = !this.isRead
 }
