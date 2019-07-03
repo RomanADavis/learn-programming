@@ -39,8 +39,8 @@ Library.prototype.table = function(){
 
   return (
 `<table>
-  ${newBookInput}
   ${headers}
+  ${newBookInput}
   ${content}
 </table>`)
 }
