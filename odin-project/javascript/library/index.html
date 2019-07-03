@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./css.css">
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <title>Library</title>
+        <script src='./book.js'></script>
+        <script>
+          const library = new Library()
+
+          const update = function(){
+            document.getElementById('library').innerHTML = library.table()
+          }
+
+          const remove = function(title){
+            library.remove(title)
+            update()
+          }
+
+          const addBook = function(){
+            const title = document.getElementById('titleInput').value
+            const author = document.getElementById('authorInput').value
+            const pages = document.getElementById('pagesInput').value
+            const isRead = document.getElementById('isReadInput').checked
+            const book = new Book(title, author, pages, isRead)
+            library.addBook(book)
+            update()
+          }
+
+          const toggleRead = function(title){
+            library.toggleRead(title)
+            update()
+          }
+
+          window.onload = function(){
+            const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 256, true)
+            const theOutsiders = new Book('The Outsiders', 'S.E. Hinton', 167, true)
+            const theDaoDeJing = new Book('The Dao De Jing', 'Lao Tzu', 83, true)
+            const infintiteJest = new Book('Infinite Jest', 'David Foster Wallace', 967, false);
+
+            const books = [theHobbit, theOutsiders, theDaoDeJing, infintiteJest]
+            books.forEach(book => library.addBook(book))
+            update()
+          }
+        </script>
+    </head>
+
+    <body>
+        <div class="Container">
+            <div class="Header">
+
+            </div>
+
+            <div class="Body">
+              <div id='library'></div>
+            </div>
+            <div class="Footer">
+                Copyright - Lol, Just Kidding
+            </div>
+        </div>
+    </body>
+</html>
