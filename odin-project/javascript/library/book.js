@@ -9,11 +9,11 @@ Library.prototype.addBook = function(book){
 Library.prototype.table = function(){
   const headers = 
   `<tr>
-    <td>Title</td>
-    <td>Author</td>
-    <td>Pages</td>
-    <td>Read</td>
-    <td>Delete</td>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Pages</th>
+    <th>Read</th>
+    <th>Delete</th>
   </tr>`
 
   const newBookInput = 
