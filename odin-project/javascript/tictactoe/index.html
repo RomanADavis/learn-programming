@@ -16,14 +16,32 @@
             update()
           }
 
-          window.onload = function(){
+          const reset = function(){
+            GameBoard.reset()
             update()
+          }
+
+          const setName = function(id){
+            var name = document.getElementById(id).value
+            GameBoard[id] = name
+            update()
+          }
+
+          window.onload = function(){
+            reset()
           }
         </script>
     </head>
 
     <body>
         <div id='body'>
+        </div>
+        <div id='input'>
+          <label>X Player Name</label>
+          <input value='X' type='text' id='X' onchange='setName("X")'>
+          <label>O Player Name</label>
+          <input value='O' type='text' id='O' onchange='setName("O")'>
+          <button onclick='reset()'>Reset</button>
         </div>
     </body>
 </html>

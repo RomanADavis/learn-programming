@@ -1,13 +1,22 @@
 const GameBoard = {
-  contents: [
-    ['', '', ''], 
-    ['', '', ''], 
-    ['', '', '']
-  ],
-
   player: 'X',
+  'X': 'X',
+  'O': 'O',
+
+  reset: () => {
+    GameBoard.contents = [
+      ['', '', ''], 
+      ['', '', ''], 
+      ['', '', '']]
+    GameBoard.player = 'X',
+    GameBoard.tied = false
+    GameBoard.won = false
+    GameBoard['X']
+    GameBoard.error = 'All Good' 
+  },
 
   togglePlayer: () => {
+    GameBoard.error = `${GameBoard[GameBoard.player]}'s Turn`
     GameBoard.player = GameBoard.player === 'X' ? 'O' : 'X'
   },
 
@@ -43,7 +52,7 @@ const GameBoard = {
   },
 
   winner: () => {
-    const isWinningStreak = (streak) => {
+    const isWinningStreak = (streak) => { // private function
       let first = streak[0]
       if(first === ''){
         return false
@@ -91,12 +100,7 @@ const GameBoard = {
     return true
   },
 
-  tied: false,
-  won: false, 
-
   endGame: () => {
     GameBoard.error = GameBoard.tied ? "Cat's Game" : `${GameBoard.won} won`
-  },
-
-  error: 'All Good' 
+  }
 }
