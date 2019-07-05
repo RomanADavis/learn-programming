@@ -5,6 +5,12 @@
   display: flex;
 }
 
+#input {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 #game-board
 {
 	width: 600px;

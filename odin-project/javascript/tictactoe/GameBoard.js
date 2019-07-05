@@ -4,20 +4,17 @@ const GameBoard = {
   'O': 'O',
 
   reset: () => {
-    GameBoard.contents = [
-      ['', '', ''], 
-      ['', '', ''], 
-      ['', '', '']]
-    GameBoard.player = 'X',
+    GameBoard.contents = [['', '', ''], 
+                          ['', '', ''], 
+                          ['', '', '']]
     GameBoard.tied = false
     GameBoard.won = false
-    GameBoard['X']
-    GameBoard.error = 'All Good' 
+    GameBoard.togglePlayer()
   },
 
   togglePlayer: () => {
-    GameBoard.error = `${GameBoard[GameBoard.player]}'s Turn`
     GameBoard.player = GameBoard.player === 'X' ? 'O' : 'X'
+    GameBoard.error = `${GameBoard[GameBoard.player]}'s Turn`
   },
 
   render: () => {
