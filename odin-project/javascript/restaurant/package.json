@@ -1,0 +1,11 @@
+{
+  "name": "Restaurant",
+  "version": "1.0.0",
+  "description": "Restaurant Page for the Odin Project",
+  "main": "index.js",
+  "author": "Roman Alexander Davis",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.35.3"
+  }
+}
