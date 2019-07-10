@@ -27,9 +27,11 @@ export default function(){
     return element
   }
 
-  const content = document.getElementById('content')
+  const page = document.createElement('div')
 
-  content.appendChild(image())
-  content.appendChild(headline())
-  content.appendChild(copy())
+  page.appendChild(image())
+  page.appendChild(headline())
+  page.appendChild(copy())
+
+  return page
 }
