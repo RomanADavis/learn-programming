@@ -1,0 +1,14 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo App for the Odin Project",
+  "main": "index.js",
+  "author": "Roman Alexander Davis",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.35.3"
+  },
+  "dependencies": {
+    "webpack-cli": "^3.3.5"
+  }
+}
