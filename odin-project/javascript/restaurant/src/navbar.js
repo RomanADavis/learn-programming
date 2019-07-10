@@ -1,6 +1,6 @@
 import navigation from './navigation'
 
-export default function(options) {
+const navbar = function(options) {
   const navlink = function(name, isActive){
     const element = document.createElement('li')
     const link = document.createElement('a')
@@ -15,7 +15,7 @@ export default function(options) {
   }
 
   const element = document.createElement('ul')
-  const pages = ['home', 'menu']
+  const pages = ['home', 'menu', 'about']
   let links
   if(options && options.active){
     links = pages.map(page => navlink(page, options.active === page))
@@ -29,3 +29,5 @@ export default function(options) {
 
   return element
 }
+
+export default navbar

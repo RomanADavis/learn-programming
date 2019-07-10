@@ -1,4 +1,4 @@
-export default function(){
+const home = function(){
   function image(){
     const element = document.createElement('div')
     element.id = 'image'
@@ -35,3 +35,5 @@ export default function(){
 
   return page
 }
+
+export default home

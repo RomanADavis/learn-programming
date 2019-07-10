@@ -1,11 +1,13 @@
+import navbar from './navbar'
 import home from './home'
 import menu from './menu'
-import navbar from './navbar'
+import about from './about'
 
 const navigation = {
   pages: {
     'home': home(),
-    'menu': menu()
+    'menu': menu(),
+    'about': about()
   },
 
   loadPage : function(page){
