@@ -1,12 +1,16 @@
+import navigation from './navigation'
+
 export default function(options) {
   const navlink = function(name, isActive){
     const element = document.createElement('li')
     const link = document.createElement('a')
 
-    element.innerHTML = name
-    element.onclick = `navigation.loadPage("${name}")`
-    element.class = isActive ? 'active' : ''
-
+    link.innerHTML = name
+    link.onclick = () => navigation.loadPage(name)
+    link.class = isActive ? 'active' : ''
+    
+    element.appendChild(link)
+    
     return element
   }
 
