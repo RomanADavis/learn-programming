@@ -1,4 +1,4 @@
-class TodoForm{
+export default class TodoForm{
   constructor(project){
     this.project = project
     this.title = ''
@@ -56,11 +56,15 @@ class TodoForm{
   }
 
   dueDateInput(){
+    const component = document.createElement('div')
 
+    return component
   }
 
   priorityInput(){
-    
+    const component = document.createElement('div')
+
+    return component
   }
 
   submitButton(){
@@ -78,7 +82,7 @@ class TodoForm{
     form.appendChild(this.descriptionInput())
     form.appendChild(this.dueDateInput())
     form.appendChild(this.priorityInput())
-    form.appendChild(submitButton)
+    form.appendChild(this.submitButton())
     
     component.appendChild(form)
     return component
