@@ -7,38 +7,17 @@ export default class TodoForm{
     this.priority = ''
   }
 
-  submit(){
-    this.project.addTodo(this.title, this.description, this.dueDate, this.priority)
-  }
-
-  changeTitle(event){
-    
-  }
-
-  changeDescription(event){
-
-  }
-
-  changeDueDate(event){
-
-  }
-
-  changePriority(event){
-
-  }
-
   titleInput(){
     const component = document.createElement('div')
     const label = document.createElement('label')
     const input = document.createElement('input')
-    label.innerHTML = 'Title'
     
+    label.innerHTML = 'Title'
     input.setAttribute('type', 'text')
-    input.onchange = this.changeTitle
+    input.onchange = event => this.title = event.value
 
     component.appendChild(label)
     component.appendChild(input)
-
     return component
   }
 
@@ -48,7 +27,7 @@ export default class TodoForm{
     const textarea = document.createElement('textarea')
 
     label.innerHTML = 'Description'
-    textarea.onchange = this.changeDescription
+    textarea.onchange = event => this.description = event.value
 
     component.appendChild(label)
     component.appendChild(textarea)
@@ -57,20 +36,42 @@ export default class TodoForm{
 
   dueDateInput(){
     const component = document.createElement('div')
+    const label = document.createElement('label')
+    const dateInput = document.createElement('input')
 
+    label.innerHTML = 'Due Date'
+    dateInput.setAttribute('type', 'date')
+    dateInput.onchange = event => this.dueDate = event.value
+
+    component.appendChild(label)
+    component.appendChild(dateInput)
     return component
   }
 
   priorityInput(){
     const component = document.createElement('div')
+    const label = document.createElement('label')
+    const prioritySelect = document.createElement('select')
+    const priorities = ['', 'Green', 'Yellow', 'Red']
 
+    label.innerHTML = 'Priority'
+    prioritySelect.onChange = event => this.priority = event.value
+    priorities.forEach(priority => {
+      let option = document.createElement(option)
+      option.value = priority
+      option.innerHTML = priority
+      prioritySelect.appendChild(option)
+    })
+
+    component.appendChild(label)
+    component.appendChild(prioritySelect)
     return component
   }
 
   submitButton(){
     const submitButton = document.createElement('button')
     submitButton.innerHTML = 'Submit'
-    submitButton.onclick = this.submit()
+    submitButton.onclick = () => this.project.addTodo(this.title, this.description, this.dueDate, this.priority)
     return submitButton
   }
 
